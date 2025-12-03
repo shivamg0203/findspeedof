@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+  <meta name=description content="Check your real-time speed in km/h using GPS without any native app installation">
+  <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=1">
+  <link rel=canonical href="https://www.findspeedof.in/">
+  <meta name=mobile-web-app-capable content=yes>
+  <meta name=apple-mobile-web-app-capable content=yes>
+  <meta name=application-name content=Findspeedof>
+  <meta name=apple-mobile-web-app-status-bar-style content=black>
+  <meta name=apple-mobile-web-app-title content=Findspeedof>
+  <link rel=icon sizes=192x192 href=/images/touch/website.png>
+  <link rel=apple-touch-icon href=/images/touch/findspeedof_192.png>
+  <meta name=msapplication-TileImage content=/images/touch/findspeedof_144.png>
+  <meta name=msapplication-TileColor content=#3f51b5>
+  <meta name=theme-color content=#3f51b5>
+  <meta property=og:title content=Findspeedof>
+  <meta property=og:type content=website>
+  <meta property=og:image content=https://www.findspeedof.in/images/touch/findspeedof_192.png>
+  <meta property=og:url content="https://www.findspeedof.in/">
+  <meta property=og:description
+    content="Check your real-time speed in km/h. No installation needed. Use it right away!">
+  <meta name=twitter:card content=summary>
+  <meta name=twitter:url content="https://www.findspeedof.in/">
+  <meta name=twitter:title content=Findspeedof>
+  <meta name=twitter:description
+    content="Check your real-time speed in km/h. No installation needed. Use it right away!">
+  <meta name=twitter:image content=https://www.findspeedof.in/images/touch/findspeedof_192.png>
+  <meta name=google-adsense-account content=ca-pub-5200094130124288>
+  <link rel=stylesheet href=styles/main.css>
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-3#######H');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5200094130124288"
+    crossorigin=anonymous></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:site_name" content="web.dev">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <!-- Primary Meta Tags -->
+  <title>GPS Speed Calculator | Real-Time Speed Tracking Tool</title>
+  <meta name="description"
+    content="Accurate real-time GPS speed calculator that measures your current speed, average speed, maximum speed, and acceleration. Perfect for runners, cyclists, and drivers." />
+  <meta name="keywords"
+    content="GPS speed calculator, real-time speed tracker, speedometer, velocity calculator, running speed, cycling speed, driving speed, acceleration calculator" />
+  <meta name="author" content="Shivam Gupta" />
+  <meta name="robots" content="index, follow" />
+  <meta name=msapplication-TileImage content=/images/touch/Findspeedof_144.png>
+  <meta name=msapplication-TileColor content=#3f51b5>
+  <meta name=theme-color content=#3f51b5>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GPS Speed Calculator | Real-Time Speed Tracking Tool" />
+  <meta property="og:description"
+    content="Accurate real-time GPS speed calculator that measures your current speed, average speed, maximum speed, and acceleration." />
+  <meta property="og:url" content="https://yourwebsite.com/gps-speed-calculator" />
+  <!-- <meta property="og:image" content="https://yourwebsite.com/images/gps-speed-calculator-preview.jpg" /> -->
+  <meta property="og:site_name" content="Live Speed Calculator" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GPS Speed Calculator | Real-Time Speed Tracking Tool" />
+  <meta name="twitter:description"
+    content="Accurate real-time GPS speed calculator that measures your current speed, average speed, maximum speed, and acceleration." />
+  <!-- <meta name="twitter:image" content="https://yourwebsite.com/images/gps-speed-calculator-preview.jpg" /> -->
+  <meta name=google-adsense-account content=myadsenseid>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://findspeedof.com/gps-speed-calculator" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel=stylesheet href=styles/main.css>
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <!-- Structured Data -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'mytrackingid');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=myadsenseid"
+    crossorigin=anonymous></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "GPS Speed Calculator",
+      "description": "Real-time speed tracking tool using GPS technology",
+      "url": "https://findspeedof.com/gps-speed-calculator",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    a {
+      color: white;
+    }
+
+    body {
+      background-color: rgb(247, 249, 235);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    .pageheader {
+      background:#17A2B8;
+      background:dodgerblue;
+      -webkit-background-clip: text;
+      color: transparent;
+      /*margin-bottom: 20px;*/
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /*CSS EDIT*/
+    .typing-text {
+      animation: blink-caret 5s step-end infinite, fade-in 3s ease-in-out, move-down 3s ease-in-out;
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: orange;
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes move-down {
+      from {
+        transform: translateY(-20px);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /*CSS EDIT*/
+    #speed {
+      color: red;
+      font-size: 8rem;
+      font-weight: bold;
+    }
+
+    #accuracy {
+      color: #4b708c;
+      font-size: 1.5rem;
+    }
+
+    #avrg {
+      color: #2c7be5;
+      font-size: 1.5rem;
+    }
+
+    #acceleration {
+      color: rgb(198, 80, 17);
+      font-size: 1.5rem;
+    }
+    #distance{
+      color:#3a5a6f;
+      font-size: 1.5rem;
+    }
+
+    #maxsp {
+      color: green;
+      font-size: 1.5rem;
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .btn-primary {
+      background-color: #4b708c;
+      border-color: #4b708c;
+    }
+
+    .btn-primary:hover {
+      background-color: #3a5a6f;
+      border-color: #3a5a6f;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4b708c;
+    }
+
+    .breadcrumb {
+      background-color: transparent;
+      padding: 0.75rem 0;
+    }
+
+    footer {
+      background-color: #4b708c;
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .speed-display {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      font-size: 1.25rem !important;
+      font-weight: 400;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+      font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    }
+
+    .btn-light {
+      color: #212529;
+      background-color: #f8f9fa;
+      border-color: #717171;
+    }
+#readoutUnits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* 2 cards per row */
+  gap: 8px;                                /* slim space between cards */
+  max-width: 360px;                        /* looks like a narrow phone screen */
+  margin: 0 auto;                          /* center on larger screens */
+  padding: 4px;
+  margin-top: 12px;
+}
+
+/* Each metric tile */
+#readoutUnits .measure{
+  display: flex;  
+  flex-direction: column;                 
+  justify-content: center;
+  align-items: center;
+  margin: 0;                       
+  padding: 2px 8px;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  text-align: center;
+  width: -webkit-fill-available;
+}
+
+/* Optional: bump the font and spacing a bit on wider screens */
+@media (min-width: 600px) {
+  #readoutUnits {
+    gap: 12px;
+  }
+  #readoutUnits .metric {
+    font-size: 1.1rem;
+    padding: 2px 10px;
+  }
+}
+.metricunit{
+  margin-bottom: 5px!important;
+  color: #757575!important;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h1 class="text-center pageheader">Very Accurate GPS </h1>
+    <p class="text-center lead" style="">Track your real-time speed & movement metrics using GPS</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8" style="padding-top: 0rem;">
+        <div class="container mt-2" style="padding-top: 1rem;">
+          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed"></span><span id="spdunit" style="font-weight: 700;padding-left: 5px;"></span></p>
+
+          <div class="justify-content-center d-flex" style="padding-top:1rem;padding-bottom:1rem;">
+            <div class="mb-3">
+              <!-- <option value="unknown" >Select Accuracy Level</option> -->
+              <button type="button" onclick="speedunitfunc('kmph')" class="btn btn-light kmph" disabled>Km/h</button>
+              <button type="button" onclick="speedunitfunc('meters')" class="btn btn-light meters">m/s</button>
+              <button type="button" onclick="speedunitfunc('mph')" class="btn btn-light mph">mph</button>
+
+            </div>
+          </div>
+          <p id="pacceleration" class="text-center d-none">Acceleration:<span id="acceleration">0.00</span> m/s²</p>
+          <div class="justify-content-center d-flex">
+            <form action="" method="get">
+              <!-- <select id="accselector" class="form-select" aria-label="Default select example">
+          <option value="unknown" selected="">Change Accuracy</option>
+          <option value="true">High</option>
+          <option value="false">Low</option>
+        </select> -->
+              <!-- <button type="button" onclick="manageAccuracy()" class="btn btn-info">
+            Accuracy
+          </button> -->
+          <div style="display: flex;justify-content: space-evenly;gap:1rem">
+              <button id="strstpbtn" type="button" onclick="starter()" class="btn btn-info">
+                <i class="bi bi-play-fill"></i>Start
+              </button>
+              <button type="button" onclick="restart()" class="btn btn-info">
+                Restart
+              </button>
+              <button type="button" onclick="toggleAdvancedMenu()" class="btn btn-info">More Option <i class="bi bi-arrow-down-square-fill"></i></button>
+                  </div>
+          
+
+              <!-------------------------Remove this section if this file throws error------------------->
+
+              <div class="metadata d-none" id="readoutUnits" style="">
+
+                <div class="measure"> <span id="maxsp">0</span> <p class="metric">kmph</p> <p class="metricunit">Max</p></div> 
+          
+                <div class="measure"> <span id="avrg">0</span> <p class="metric">kmph </p> <p class="metricunit">Average</p></div>
+                <div class="measure"> <span id="accuracy">0</span> <p class="metric">M</p> <p class="metricunit">Accuracy</p></div>
+                <div class="measure"> <span id="distance">0</span> <p class="metric">M </p> <p class="metricunit">Distance</p></div>
+             </div>
+              
+              <button type="button" id="modalopac" class="btn btn-primary d-none" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Launch demo modal
+              </button>
+              <!------------------------------------------------------------------------------------------>
+
+            </form>
+          </div>
+
+
+          <p class="text-center text-danger" id="error"></p>
+
+        </div>
+
+        <div id="advancedMenu" class="card d-none">
+          <div class="card-body text-center">
+            <form>
+              <div class="mb-3">
+                <label for="accselector" class="form-label">GPS Accuracy Setting</label>
+                <select id="accselector" class="form-select" aria-label="GPS accuracy selection">
+                  <!-- <option value="unknown" >Select Accuracy Level</option> -->
+                  <option value="true" selected>High (More Battery Usage)</option>
+                  <option value="false">Low (Battery Saver)</option>
+                </select>
+              </div>
+
+            </form>
+
+            <p class="text-danger mt-3" id="error"></p>
+            <div class="justify-content-center d-flex">
+              <br>
+              <button type="button" onclick="acctoggle()" class="btn btn-secondary btn-sm">Calculate
+                Acceleration</button>
+              <!-- <button type="button" onclick="plotGraph('speed')" class="btn btn-secondary btn-sm">Plot Speed Graph</button> -->
+              <!-- <button type="button" onclick="plotGraph('acceleration')" class="btn btn-secondary btn-sm">Plot Acceleration Graph</button> -->
+              <button type="button" onclick="showLocation()" class="btn btn-secondary btn-sm">See My Location</button>
+              <button type="button" onclick="showSpeedIndicator()" class="btn btn-secondary btn-sm">Show Speed
+                Indicator</button>
+            </div>
+            <div class="mt-4">
+              <h5>Advanced Options</h5>
+              <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <button type="button" onclick="acctoggle()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-speedometer2"></i> Toggle Acceleration
+                </button>
+                <button type="button" onclick="showLocation()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-geo-alt-fill"></i> Show Location
+                </button>
+                <button type="button" onclick="showSpeedIndicator()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-speedometer"></i> Speed Indicator
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="mt-5">
+      <h3 class="text-center mb-4" style="font-size: 2.4rem;">Key Features</h3>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <h3 class="h5">Real-Time Speed</h3>
+              <p>Get instant updates on your current speed with GPS precision, updated every few seconds.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon">
+                <i class="bi bi-graph-up"></i>
+              </div>
+              <h3 class="h5">Performance Metrics</h3>
+              <p>Track your average speed, maximum speed achieved, and acceleration over time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon">
+                <i class="bi bi-battery-full"></i>
+              </div>
+              <h3 class="h5">Battery Options</h3>
+              <p>Choose between high accuracy or battery-saving mode depending on your needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">How Our GPS Speed Calculator Works</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h3>For Runners and Cyclists</h3>
+              <p>Our GPS speed calculator is perfect for athletes who want to track their training performance. See your
+                real-time speed, average pace, and maximum speed during your workout sessions.</p>
+              <ul>
+                <li>Measure your running or cycling speed without additional devices</li>
+                <li>Track acceleration during sprints or intervals</li>
+                <li>Monitor performance improvements over time</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h3>For Drivers and Travelers</h3>
+              <p>Whether you're driving, boating, or just curious about your speed, our tool provides accurate
+                measurements using your device's GPS capabilities.</p>
+              <ul>
+                <li>No need for dedicated speedometer apps</li>
+                <li>Works offline once started (GPS still required)</li>
+                <li>Helps maintain safe driving speeds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mt-5">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              How accurate is the GPS speed calculator?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The accuracy depends on your device's GPS capabilities and environmental factors. Typically, modern
+              smartphones can measure speed with an accuracy of ±0.5-2 km/h in good conditions. The accuracy value
+              displayed shows the estimated margin of error.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Does this work without an internet connection?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, the speed calculator uses your device's GPS which works without an internet connection. However,
+              initial location detection might be faster with internet access for A-GPS functionality.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Why is my speed showing as 0 km/h when I'm moving?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              This usually happens when the GPS signal is weak or blocked. Try moving to an open area away from tall
+              buildings. Also ensure you've selected an accuracy mode and clicked "Start Tracking".
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>GPS Speed Calculator</h3>
+          <p>Track your speed with precision using your device's GPS capabilities. Perfect for athletes, drivers, and
+            outdoor enthusiasts.</p>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Share</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://www.findspeedof.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.findspeedof.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">&copy; 2023 GPS Speed Calculator. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Select Accuracy</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalmessage">
+          Please select an accuracy level before starting the speed tracker. High accuracy provides more precise
+          measurements but uses more battery.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    let watchID;
+    let previousPosition;
+    let previousTimestamp;
+    let accsele = document.querySelector("#accselector");
+    let toggleaccuracy = false;
+    let modalsbut = document.querySelector("#modalopac")
+    let pacc = document.querySelector("#pacceleration")
+    let avg = document.querySelector("#avrg")
+    let ma = document.querySelector("#maxsp")
+    let prevspeed, prevtime;
+    let showAcc = false;
+    let speedCount = 0
+    let totalSpeed = 0
+    let maxspeed = 0
+    let average = 0
+    let unit = 'kmph'
+    let tracking = false;
+    function acctoggle() {
+      showAcc = !showAcc
+      pacc.classList.toggle('d-none')
+    }
+    function restart() {
+      stopTracking();
+      if (!tracking) {
+        starter();
+      }
+      else {
+        startTracking();
+      }
+    }
+    function starter() {
+      if (!tracking) {
+        tracking = true;
+        toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
+        document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-stop-fill"></i> Stop`
+        startTracking();
+      } else {
+        document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-play-fill"></i> Start`;
+        stopTracking();
+        tracking = false;
+      }
+      /*if (manageAccuracy()) {console.log(accsele.value)startTracking(); }*/
+    }
+
+    function stopper() {
+      stopTracking();
+    }
+
+    function toggleAdvancedMenu() {
+      const advancedMenu = document.getElementById('readoutUnits');
+      advancedMenu.classList.toggle('d-none');
+      
+
+      
+    }
+
+    function speedunitfunc(vall) {    /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
+      a = ['meters', 'mph', 'kmph']
+      unit = vall;
+      for (let el of a) {
+        if (el == vall) {
+          document.getElementsByClassName(el)[0].disabled = true;
+          if (el=='meters'){
+            document.querySelector('#spdunit').innerText = 'm/s'
+          }
+          else{
+            document.querySelector('#spdunit').innerText = el
+          }
+        }
+        else { document.getElementsByClassName(el)[0].disabled = false; }
+      }
+    }
+
+    function calculateSpeed(position) {
+      const {
+        latitude,
+        longitude,
+        accuracy
+      } = position.coords;
+      console.log(accsele.value)
+      const currentTimestamp = position.timestamp;
+      if (previousPosition && previousTimestamp) {
+        const distance = getDistance(
+          previousPosition.latitude,
+          previousPosition.longitude,
+          latitude,
+          longitude
+        );
+        const timeElapsed = (currentTimestamp - previousTimestamp) / 1000; // in seconds
+        if (timeElapsed > 0) {
+          let speed = (distance / timeElapsed) // m/s
+
+          if (unit === 'kmph') {
+            speed = speed * 3.6;
+            //unitLabel = 'km/h';
+            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+          } else if (unit === 'mph') {
+            speed = speed * 2.23694;
+            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+            // unitLabel = 'mph';
+          } else {
+            //speed = rawSpeedMS;
+            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+            //unitLabel = 'm/s';
+          }
+          //document.getElementById("speed").innerText = speed.toFixed(2);
+          document.getElementById("accuracy").innerText = accuracy.toFixed(2);
+          totalSpeed += speed;
+          speedCount += 1;
+          if (speedCount > 0) {
+            average = Number(totalSpeed / speedCount)
+          }
+          avg.innerText = average.toFixed(2)
+          if (speed.toFixed(2) > maxspeed) {
+            maxspeed = Number(speed.toFixed(2))
+            ma.innerText = maxspeed
+          }
+          if (showAcc) {
+            console.log(showAcc)
+            calcAcc(speed.toFixed(2), currentTimestamp)
+          }
+        }
+      }
+      previousPosition = {
+        latitude,
+        longitude
+      };
+      previousTimestamp = currentTimestamp;
+    }
+
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371e3; // metres
+      const φ1 = (lat1 * Math.PI) / 180;
+      const φ2 = (lat2 * Math.PI) / 180;
+      const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+      const Δλ = ((lon2 - lon1) * Math.PI) / 180;
+      const a =
+        Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c; // in metres
+      return distance;
+    }
+
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("error").innerText =
+            "User denied the request for Geolocation. Please enable location services to use this tool.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("error").innerText =
+            "Location information is unavailable. Please check your GPS signal.";
+          break;
+        case error.TIMEOUT:
+          document.getElementById("error").innerText =
+            "The request to get user location timed out. Please try again.";
+          break;
+        case error.UNKNOWN_ERROR:
+          document.getElementById("error").innerText =
+            "An unknown error occurred. Please refresh the page and try again.";
+          break;
+      }
+    }
+
+    function showLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const {
+            latitude,
+            longitude
+          } = position.coords;
+          alert(`Your current location:\nLatitude: ${latitude}\nLongitude: ${longitude}\nAccuracy: ${position.coords.accuracy} meters`);
+        }, showError);
+      } else {
+        document.getElementById('error').innerText = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function startTracking() {
+      try {
+        let details = navigator.userAgent;
+        let regexp = /android|iphone|kindle|ipad/i;
+        let isMobileDevice = regexp.test(details);
+        console.log(toggleaccuracy)
+        var vartimeout;
+        if (isMobileDevice) {
+          vartimeout = 5000;
+          console.log(`Mobile device detected - using faster update interval (${vartimeout}ms)`);
+        } else {
+          vartimeout = 15000;
+          console.log(`Desktop detected - using slower update interval (${vartimeout}ms)`);
+        }
+      } catch (e) {
+        console.error(`Error detecting device type: ${e}`)
+      }
+
+      if (navigator.geolocation) {
+        watchID = navigator.geolocation.watchPosition(
+          calculateSpeed,
+          showError, {
+          enableHighAccuracy: toggleaccuracy,
+          maximumAge: 1000,
+          timeout: 15000,
+        }
+        );
+      } else {
+        document.getElementById("error").innerText =
+          "Geolocation is not supported by this browser. Please try a modern browser like Chrome, Firefox, or Safari.";
+      }
+    }
+
+    function stopTracking() {
+      try {
+        if (navigator.geolocation && watchID !== undefined) {
+          navigator.geolocation.clearWatch(watchID);
+          watchID = undefined;
+          document.getElementById("speed").innerText = "0";
+          document.getElementById("accuracy").innerText = "0";
+          avg.innerText = '0';
+          ma.innerText = '0';
+          document.querySelector('#acceleration').innerText = '0';
+          speedCount = 0;
+          totalSpeed = 0;
+          maxspeed = 0;
+          average = 0;
+          console.log("stopping")
+        }
+      }
+      catch (err) {
+        console.error(err)
+      }
+    }
+
+    function calcAcc(speedval, timestamp) {
+      if (prevspeed && prevtime) {
+        const timewentby = (timestamp - prevtime) / 1000
+        const deltaspeed = (speedval - prevspeed) / 3.6
+        if (timewentby > 0) {
+          const reqaccel = (deltaspeed / timewentby)
+          document.querySelector('#acceleration').innerText = reqaccel.toFixed(2)
+        }
+      }
+      prevspeed = speedval
+      prevtime = timestamp
+    }
+
+    function plotGraph(type) {
+      alert(`This would display a ${type} graph in a full implementation.`);
+    }
+
+    function showSpeedIndicator() {
+      alert("This would show a visual speed indicator/gauge in a full implementation.");
+    }
+
+    // Initialize the page with better error handling
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!navigator.geolocation) {
+        document.getElementById('error').innerText =
+          "Your browser doesn't support geolocation, which is required for this tool. " +
+          "Please try a modern browser like Chrome, Firefox, or Safari.";
+      }
+    });
+  </script>
+</body>
+
+</html>

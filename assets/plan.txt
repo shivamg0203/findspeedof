@@ -1,0 +1,35 @@
+## EXPORT IMPORT HEADER FOOTER IN EVERY HTML PAGES ##
+{% include "header.html" %}
+<main> Page content </main>
+{% include "footer.html" %}
+
+## WEBSITE FOLDER STRUCTURE ##
+your-project/
+│
+├── _includes/
+│     ├── header.html
+│     └── footer.html
+│
+├── index.html
+├── about.html
+├── contact.html
+│
+├── assets/
+│     ├── css/
+│     │     └── style.css
+│     ├── js/
+│     │     └── main.js
+│     └── images/
+│
+├── netlify.toml   (optional but recommended)
+└── README.md
+
+## HEADER STRUCTURE ##
+<header>
+  <div class="logo">Speedometer</div>
+  <nav class="navbar">  ##NAVBAR
+    <a href="index.html">Home</a>
+    <a href="gps-speed.html">GPS Speed</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
