@@ -181,7 +181,7 @@
 
     /*CSS EDIT*/
     #speed {
-      color: red;
+      color: black;
       font-size: 8rem;
       font-weight: bold;
     }
@@ -318,12 +318,12 @@
   <!-- Main Content -->
   <div class="container mt-4">
     <h1 class="text-center pageheader">Very Accurate GPS </h1>
-    <p class="text-center lead" style="">Track your real-time speed & movement metrics using GPS</p>
+    <p class="text-center lead" style="">Track your real-time speed & movement metrics using this Speedometer.</p>
 
     <div class="row justify-content-center">
       <div class="col-md-8" style="padding-top: 0rem;">
         <div class="container mt-2" style="padding-top: 1rem;">
-          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed"></span><span id="spdunit" style="font-weight: 700;padding-left: 5px;"></span></p>
+          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed">0</span><span id="spdunit" style="font-weight: 700;padding-left: 5px;">km/h</span></p>
 
           <div class="justify-content-center d-flex" style="padding-top:1rem;padding-bottom:1rem;">
             <div class="mb-3">
@@ -425,7 +425,10 @@
       </div>
     </div>
 
+    <article class="about" style="margin-inline: 10px; margin-block: 10px;">This free online speedometer measures real-time speed of any
+     moving object or vehicle. You can use it to check speed of train, car, bike or atheletes. It's a GPS based speedometer.</article>
     <!-- Features Section -->
+     
     <section id="features" class="mt-5">
       <h3 class="text-center mb-4" style="font-size: 2.4rem;">Key Features</h3>
       <div class="row">
@@ -436,7 +439,7 @@
                 <i class="bi bi-speedometer2"></i>
               </div>
               <h3 class="h5">Real-Time Speed</h3>
-              <p>Get instant updates on your current speed with GPS precision, updated every few seconds.</p>
+              <p>Do you want to know the speed at which you are travelling or moving right now? Find it Here.</p>
             </div>
           </div>
         </div>
@@ -446,8 +449,8 @@
               <div class="feature-icon">
                 <i class="bi bi-graph-up"></i>
               </div>
-              <h3 class="h5">Performance Metrics</h3>
-              <p>Track your average speed, maximum speed achieved, and acceleration over time.</p>
+              <h3 class="h5">No App installation</h3>
+              <p>Use this online speedometer to check your current speed, average speed, and maximum speed — all without installing any app.</p>
             </div>
           </div>
         </div>
@@ -457,8 +460,8 @@
               <div class="feature-icon">
                 <i class="bi bi-battery-full"></i>
               </div>
-              <h3 class="h5">Battery Options</h3>
-              <p>Choose between high accuracy or battery-saving mode depending on your needs.</p>
+              <h3 class="h5">Other Units</h3>
+              <p>Select the preferred speed unit amongst km/h, mph, and meters per second.</p>
             </div>
           </div>
         </div>
@@ -469,26 +472,29 @@
     <section id="how-it-works" class="mt-5">
       <div class="card">
         <div class="card-body">
-          <h2 class="text-center mb-4">How Our GPS Speed Calculator Works</h2>
+          <h2 class="text-center mb-4">Online speedometer use cases and working.</h2>
           <div class="row">
             <div class="col-md-6">
-              <h3>For Runners and Cyclists</h3>
-              <p>Our GPS speed calculator is perfect for athletes who want to track their training performance. See your
-                real-time speed, average pace, and maximum speed during your workout sessions.</p>
+              <h3>Use Cases</h3>
               <ul>
-                <li>Measure your running or cycling speed without additional devices</li>
-                <li>Track acceleration during sprints or intervals</li>
-                <li>Monitor performance improvements over time</li>
+                <li>Measure speed of train online or live train speed test</li>
+                <li>Measure speed of car online or live car speed test</li>
+                <li>Measure speed of bike online or live bike speed test</li>
+                <li>Measure speed of cycle online or live cycle speed test</li>
+                <li>Check speed of bus online or live bus speed test</li>
+                <li>Check speed of running or live running speed test</li>
+                <li>Check speed of athlete or live athlete speed test</li>
+                <li>Check average speed online or Speedometer Online</li>
               </ul>
             </div>
             <div class="col-md-6">
-              <h3>For Drivers and Travelers</h3>
-              <p>Whether you're driving, boating, or just curious about your speed, our tool provides accurate
-                measurements using your device's GPS capabilities.</p>
+              <h3>How to use GPS Speedometer?</h3>
+              <p>Measure your speed online using your smartphone or tablet. You just have to follow these steps</p>
               <ul>
-                <li>No need for dedicated speedometer apps</li>
-                <li>Works offline once started (GPS still required)</li>
-                <li>Helps maintain safe driving speeds</li>
+                <li>Click Start Button.</li>
+                <li>Allow User location permission access.</li>
+                <li>Speed Tracking Starts.</li>
+                <li>You can choose between measurements units as per need.</li>
               </ul>
             </div>
           </div>
@@ -660,9 +666,6 @@
     function toggleAdvancedMenu() {
       const advancedMenu = document.getElementById('readoutUnits');
       advancedMenu.classList.toggle('d-none');
-      
-
-      
     }
 
     function speedunitfunc(vall) {    /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
@@ -672,10 +675,14 @@
         if (el == vall) {
           document.getElementsByClassName(el)[0].disabled = true;
           if (el=='meters'){
+            if(!watchID){
             document.querySelector('#spdunit').innerText = 'm/s'
+            }
           }
           else{
+            if(!watchID){
             document.querySelector('#spdunit').innerText = el
+            }
           }
         }
         else { document.getElementsByClassName(el)[0].disabled = false; }
@@ -869,7 +876,7 @@
       if (!navigator.geolocation) {
         document.getElementById('error').innerText =
           "Your browser doesn't support geolocation, which is required for this tool. " +
-          "Please try a modern browser like Chrome, Firefox, or Safari.";
+          "Please try a modern browser.";
       }
     });
   </script>
