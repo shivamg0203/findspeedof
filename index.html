@@ -114,6 +114,14 @@
       color: white;
     }
 
+    .accordion-button {
+      width: 80%;
+    }
+
+    .accordion-body {
+      width: 78%
+    }
+
     body {
       background-color: rgb(247, 249, 235);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -121,62 +129,9 @@
     }
 
     .pageheader {
-      background:#17A2B8;
-      background:dodgerblue;
+      background: dodgerblue;
       -webkit-background-clip: text;
       color: transparent;
-      /*margin-bottom: 20px;*/
-    }
-
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    /*CSS EDIT*/
-    .typing-text {
-      animation: blink-caret 5s step-end infinite, fade-in 3s ease-in-out, move-down 3s ease-in-out;
-    }
-
-    @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent;
-      }
-
-      50% {
-        border-color: orange;
-      }
-    }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes move-down {
-      from {
-        transform: translateY(-20px);
-      }
-
-      to {
-        transform: translateY(0);
-      }
     }
 
     /*CSS EDIT*/
@@ -196,12 +151,8 @@
       font-size: 1.5rem;
     }
 
-    #acceleration {
-      color: rgb(198, 80, 17);
-      font-size: 1.5rem;
-    }
-    #distance{
-      color:#3a5a6f;
+    #distance {
+      color: #3a5a6f;
       font-size: 1.5rem;
     }
 
@@ -215,6 +166,10 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
       margin-bottom: 20px;
       border: none;
+    }
+
+    .other-important-link {
+      list-style-type: none;
     }
 
     .card-body {
@@ -235,11 +190,6 @@
       font-size: 2rem;
       margin-bottom: 1rem;
       color: #4b708c;
-    }
-
-    .breadcrumb {
-      background-color: transparent;
-      padding: 0.75rem 0;
     }
 
     footer {
@@ -269,61 +219,78 @@
       background-color: #f8f9fa;
       border-color: #717171;
     }
-#readoutUnits {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);   /* 2 cards per row */
-  gap: 8px;                                /* slim space between cards */
-  max-width: 360px;                        /* looks like a narrow phone screen */
-  margin: 0 auto;                          /* center on larger screens */
-  padding: 4px;
-  margin-top: 12px;
-}
 
-/* Each metric tile */
-#readoutUnits .measure{
-  display: flex;  
-  flex-direction: column;                 
-  justify-content: center;
-  align-items: center;
-  margin: 0;                       
-  padding: 2px 8px;
-  background: #ffffff;
-  border: 1px solid #e2e2e2;
-  border-radius: 10px;
-  font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
-  box-shadow: 0 1px 3px rgba(0,0,0,.1);
-  text-align: center;
-  width: -webkit-fill-available;
-}
+    .about {
+      margin-inline: 10px;
+      margin-block: 10px;
+    }
 
-/* Optional: bump the font and spacing a bit on wider screens */
-@media (min-width: 600px) {
-  #readoutUnits {
-    gap: 12px;
-  }
-  #readoutUnits .metric {
-    font-size: 1.1rem;
-    padding: 2px 10px;
-  }
-}
-.metricunit{
-  margin-bottom: 5px!important;
-  color: #757575!important;
-}
+    #readoutUnits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 cards per row */
+      gap: 8px;
+      /* slim space between cards */
+      max-width: 360px;
+      /* looks like a narrow phone screen */
+      margin: 0 auto;
+      /* center on larger screens */
+      padding: 4px;
+      margin-top: 12px;
+    }
 
+    /* Each metric tile */
+    #readoutUnits .measure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 2px 8px;
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      text-align: center;
+      width: -webkit-fill-available;
+    }
+
+    /* Optional: bump the font and spacing a bit on wider screens */
+    @media (min-width: 600px) {
+      #readoutUnits {
+        gap: 12px;
+      }
+
+      #readoutUnits .metric {
+        font-size: 1.1rem;
+        padding: 2px 10px;
+      }
+    }
+
+    .metricunit {
+      margin-bottom: 5px !important;
+      color: #757575 !important;
+    }
+
+    #spdunit {
+      font-weight: 700;
+      padding-left: 5px;
+    }
   </style>
 </head>
 
 <body>
   <!-- Main Content -->
   <div class="container mt-4">
-    <h1 class="text-center pageheader">Very Accurate GPS </h1>
-    <p class="text-center lead" style="">Track your real-time speed & movement metrics using this Speedometer.</p>
+    <h1 class="text-center pageheader">Findspeedof </h1>
+    <p class="text-center lead">Track your real-time speed & movement metrics using this Speedometer.</p>
 
     <div class="row justify-content-center">
       <div class="col-md-8" style="padding-top: 0rem;">
         <div class="container mt-2" style="padding-top: 1rem;">
-          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed">0</span><span id="spdunit" style="font-weight: 700;padding-left: 5px;">km/h</span></p>
+          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed">0</span><span
+              id="spdunit">km/h</span></p>
 
           <div class="justify-content-center d-flex" style="padding-top:1rem;padding-bottom:1rem;">
             <div class="mb-3">
@@ -334,7 +301,7 @@
 
             </div>
           </div>
-          <p id="pacceleration" class="text-center d-none">Acceleration:<span id="acceleration">0.00</span> m/s²</p>
+
           <div class="justify-content-center d-flex">
             <form action="" method="get">
               <!-- <select id="accselector" class="form-select" aria-label="Default select example">
@@ -345,32 +312,42 @@
               <!-- <button type="button" onclick="manageAccuracy()" class="btn btn-info">
             Accuracy
           </button> -->
-          <div style="display: flex;justify-content: space-evenly;gap:1rem">
-              <button id="strstpbtn" type="button" onclick="starter()" class="btn btn-info">
-                <i class="bi bi-play-fill"></i>Start
-              </button>
-              <button type="button" onclick="restart()" class="btn btn-info">
-                Restart
-              </button>
-              <button type="button" onclick="toggleAdvancedMenu()" class="btn btn-info">More Option <i class="bi bi-arrow-down-square-fill"></i></button>
-                  </div>
-          
+              <div style="display: flex;justify-content: space-evenly;gap:1rem">
+                <button id="strstpbtn" type="button" onclick="starter()" class="btn btn-info">
+                  <i class="bi bi-play-fill"></i>Start
+                </button>
+                <button type="button" onclick="restart()" class="btn btn-info">
+                  Restart
+                </button>
+                <button type="button" onclick="toggleAdvancedMenu()" class="btn btn-info">More Option <i
+                    class="bi bi-arrow-down-square-fill"></i></button>
+              </div>
+
 
               <!-------------------------Remove this section if this file throws error------------------->
 
-              <div class="metadata d-none" id="readoutUnits" style="">
+              <div class="metadata d-none" id="readoutUnits">
 
-                <div class="measure"> <span id="maxsp">0</span> <p class="metric">kmph</p> <p class="metricunit">Max</p></div> 
-          
-                <div class="measure"> <span id="avrg">0</span> <p class="metric">kmph </p> <p class="metricunit">Average</p></div>
-                <div class="measure"> <span id="accuracy">0</span> <p class="metric">M</p> <p class="metricunit">Accuracy</p></div>
-                <div class="measure"> <span id="distance">0</span> <p class="metric">M </p> <p class="metricunit">Distance</p></div>
-             </div>
-              
-              <button type="button" id="modalopac" class="btn btn-primary d-none" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                Launch demo modal
-              </button>
+                <div class="measure"> <span id="maxsp">0</span>
+                  <p class="metric">kmph</p>
+                  <p class="metricunit">Max</p>
+                </div>
+
+                <div class="measure"> <span id="avrg">0</span>
+                  <p class="metric">kmph </p>
+                  <p class="metricunit">Average</p>
+                </div>
+                <div class="measure"> <span id="accuracy">0</span>
+                  <p class="metric">M</p>
+                  <p class="metricunit">Accuracy</p>
+                </div>
+                <div class="measure"> <span id="distance">0</span>
+                  <p class="metric">M </p>
+                  <p class="metricunit">Distance</p>
+                </div>
+              </div>
+
+
               <!------------------------------------------------------------------------------------------>
 
             </form>
@@ -381,91 +358,56 @@
 
         </div>
 
-        <div id="advancedMenu" class="card d-none">
-          <div class="card-body text-center">
-            <form>
-              <div class="mb-3">
-                <label for="accselector" class="form-label">GPS Accuracy Setting</label>
-                <select id="accselector" class="form-select" aria-label="GPS accuracy selection">
-                  <!-- <option value="unknown" >Select Accuracy Level</option> -->
-                  <option value="true" selected>High (More Battery Usage)</option>
-                  <option value="false">Low (Battery Saver)</option>
-                </select>
-              </div>
-
-            </form>
-
-            <p class="text-danger mt-3" id="error"></p>
-            <div class="justify-content-center d-flex">
-              <br>
-              <button type="button" onclick="acctoggle()" class="btn btn-secondary btn-sm">Calculate
-                Acceleration</button>
-              <!-- <button type="button" onclick="plotGraph('speed')" class="btn btn-secondary btn-sm">Plot Speed Graph</button> -->
-              <!-- <button type="button" onclick="plotGraph('acceleration')" class="btn btn-secondary btn-sm">Plot Acceleration Graph</button> -->
-              <button type="button" onclick="showLocation()" class="btn btn-secondary btn-sm">See My Location</button>
-              <button type="button" onclick="showSpeedIndicator()" class="btn btn-secondary btn-sm">Show Speed
-                Indicator</button>
-            </div>
-            <div class="mt-4">
-              <h5>Advanced Options</h5>
-              <div class="d-flex flex-wrap gap-2 justify-content-center">
-                <button type="button" onclick="acctoggle()" class="btn btn-outline-secondary btn-sm">
-                  <i class="bi bi-speedometer2"></i> Toggle Acceleration
-                </button>
-                <button type="button" onclick="showLocation()" class="btn btn-outline-secondary btn-sm">
-                  <i class="bi bi-geo-alt-fill"></i> Show Location
-                </button>
-                <button type="button" onclick="showSpeedIndicator()" class="btn btn-outline-secondary btn-sm">
-                  <i class="bi bi-speedometer"></i> Speed Indicator
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
-    <article class="about" style="margin-inline: 10px; margin-block: 10px;">This free online speedometer measures real-time speed of any
-     moving object or vehicle. You can use it to check speed of train, car, bike or atheletes. It's a GPS based speedometer.</article>
+    <article class="about">This free online speedometer measures
+      real-time speed of any
+      moving object or vehicle. You can use it to check speed of train, car, bike or atheletes. It's a GPS based
+      speedometer.</article>
     <!-- Features Section -->
-     
+
     <section id="features" class="mt-5">
-      <h3 class="text-center mb-4" style="font-size: 2.4rem;">Key Features</h3>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <div class="feature-icon">
-                <i class="bi bi-speedometer2"></i>
+      <article class="key-features">
+        <h3 class="text-center mb-4" style="font-size: 2.4rem;">Key Features</h3>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-speedometer2"></i>
+                </div>
+                <h3 class="h5">Real-Time Speed</h3>
+                <p>Do you want to know the speed at which you are travelling or moving right now? Find it Here.</p>
               </div>
-              <h3 class="h5">Real-Time Speed</h3>
-              <p>Do you want to know the speed at which you are travelling or moving right now? Find it Here.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h3 class="h5">No App installation</h3>
+                <p>Use this online speedometer to check your current speed, average speed, and maximum speed — all
+                  without
+                  installing any app.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-battery-full"></i>
+                </div>
+                <h3 class="h5">Other Units</h3>
+                <p>Select the preferred speed unit amongst km/h, mph, and meters per second.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <div class="feature-icon">
-                <i class="bi bi-graph-up"></i>
-              </div>
-              <h3 class="h5">No App installation</h3>
-              <p>Use this online speedometer to check your current speed, average speed, and maximum speed — all without installing any app.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <div class="feature-icon">
-                <i class="bi bi-battery-full"></i>
-              </div>
-              <h3 class="h5">Other Units</h3>
-              <p>Select the preferred speed unit amongst km/h, mph, and meters per second.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </article>
     </section>
 
     <!-- How It Works Section -->
@@ -474,28 +416,33 @@
         <div class="card-body">
           <h2 class="text-center mb-4">Online speedometer use cases and working.</h2>
           <div class="row">
+
             <div class="col-md-6">
-              <h3>Use Cases</h3>
-              <ul>
-                <li>Measure speed of train online or live train speed test</li>
-                <li>Measure speed of car online or live car speed test</li>
-                <li>Measure speed of bike online or live bike speed test</li>
-                <li>Measure speed of cycle online or live cycle speed test</li>
-                <li>Check speed of bus online or live bus speed test</li>
-                <li>Check speed of running or live running speed test</li>
-                <li>Check speed of athlete or live athlete speed test</li>
-                <li>Check average speed online or Speedometer Online</li>
-              </ul>
+              <article class="use-cases">
+                <h3>Use Cases</h3>
+                <ul>
+                  <li>Measure speed of train online or live train speed test</li>
+                  <li>Measure speed of car online or live car speed test</li>
+                  <li>Measure speed of bike online or live bike speed test</li>
+                  <li>Measure speed of cycle online or live cycle speed test</li>
+                  <li>Check speed of bus online or live bus speed test</li>
+                  <li>Check speed of running or live running speed test</li>
+                  <li>Check speed of athlete or live athlete speed test</li>
+                  <li>Check average speed online or Speedometer Online</li>
+                </ul>
+              </article>
             </div>
             <div class="col-md-6">
-              <h3>How to use GPS Speedometer?</h3>
-              <p>Measure your speed online using your smartphone or tablet. You just have to follow these steps</p>
-              <ul>
-                <li>Click Start Button.</li>
-                <li>Allow User location permission access.</li>
-                <li>Speed Tracking Starts.</li>
-                <li>You can choose between measurements units as per need.</li>
-              </ul>
+              <article class="how-to-use">
+                <h3>How to use GPS Speedometer?</h3>
+                <p>Measure your speed online using your smartphone or tablet. You just have to follow these steps</p>
+                <ul>
+                  <li>Click Start Button.</li>
+                  <li>Allow User location permission access.</li>
+                  <li>Speed Tracking Starts.</li>
+                  <li>You can choose between measurements units as per need.</li>
+                </ul>
+              </article>
             </div>
           </div>
         </div>
@@ -517,23 +464,21 @@
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
               The accuracy depends on your device's GPS capabilities and environmental factors. Typically, modern
-              smartphones can measure speed with an accuracy of ±0.5-2 km/h in good conditions. The accuracy value
-              displayed shows the estimated margin of error.
-            </div>
+              smartphones can measure speed with an accuracy of ±0.5-2 km/h in good conditions. </div>
           </div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Does this work without an internet connection?
+              Can I check vehicle speed on Iphone?
             </button>
           </h3>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Yes, the speed calculator uses your device's GPS which works without an internet connection. However,
-              initial location detection might be faster with internet access for A-GPS functionality.
+              Yes, the online Speedometer at Findspeedof.com works perfectly even on Iphone. To find your vehicle speed
+              all you have to do is visit findspeedof.com on your device and then just click the start button.
             </div>
           </div>
         </div>
@@ -541,14 +486,31 @@
           <h3 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Why is my speed showing as 0 km/h when I'm moving?
+              How to measure jogging or running speed of a person?
             </button>
           </h3>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              This usually happens when the GPS signal is weak or blocked. Try moving to an open area away from tall
-              buildings. Also ensure you've selected an accuracy mode and clicked "Start Tracking".
+              You can easily measure your jogging or running speed by visiting the speedometer at findspeedof.com,
+              enable location access and click Start button.
+              As you begin jogging or running your real time speed, average speed, maximum speed and distance will be
+              displayed accurately using GPS technology.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Why is my speed showing as 0 km/h when I'm moving?
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              This usually happens when the GPS signal is low or blocked. Move to an open area, refresh the website,
+              allow location access and click 'Start' button again.
             </div>
           </div>
         </div>
@@ -556,30 +518,48 @@
     </section>
   </div>
 
+
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h3>GPS Speed Calculator</h3>
-          <p>Track your speed with precision using your device's GPS capabilities. Perfect for athletes, drivers, and
-            outdoor enthusiasts.</p>
+          <h3>Other Important Tools</h3>
+          <ul class="other-important-link">
+            <li>
+              <a href="https://www.findspeedof.com/vande-bharat-train-speed-test">Vande Bharat Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/bullet-train-speed-test">Bullet Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
+            </li>
+
+          </ul>
         </div>
         <div class="col-md-3">
           <h3>Quick Links</h3>
           <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="https://www.findspeedof.com/about-us">About</a></li>
+            <li><a href="https://www.findspeedof.com/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://www.findspeedof.com/contact-us">Contact Us</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
         <div class="col-md-3">
           <h3>Share</h3>
           <ul class="list-unstyled">
-            <li><a href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://www.findspeedof.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.findspeedof.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
-            <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+            <li><a
+                href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://www.findspeedof.com"
+                target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.findspeedof.com" target="_blank"
+                rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A"
+                onclick="this.href='https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A' + encodeURIComponent(window.location.href);"
+                target="_blank" class="bi">
+                <i class="bi bi-instagram"></i> Whatsapp</a></li>
           </ul>
         </div>
       </div>
@@ -592,25 +572,6 @@
     </div>
   </footer>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Select Accuracy</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="modalmessage">
-          Please select an accuracy level before starting the speed tracker. High accuracy provides more precise
-          measurements but uses more battery.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
@@ -618,24 +579,20 @@
     let watchID;
     let previousPosition;
     let previousTimestamp;
-    let accsele = document.querySelector("#accselector");
-    let toggleaccuracy = false;
+
+    let toggleaccuracy = true;
     let modalsbut = document.querySelector("#modalopac")
-    let pacc = document.querySelector("#pacceleration")
+
     let avg = document.querySelector("#avrg")
     let ma = document.querySelector("#maxsp")
     let prevspeed, prevtime;
-    let showAcc = false;
+    //let showAcc = false;
     let speedCount = 0
     let totalSpeed = 0
     let maxspeed = 0
     let average = 0
     let unit = 'kmph'
     let tracking = false;
-    function acctoggle() {
-      showAcc = !showAcc
-      pacc.classList.toggle('d-none')
-    }
     function restart() {
       stopTracking();
       if (!tracking) {
@@ -648,7 +605,7 @@
     function starter() {
       if (!tracking) {
         tracking = true;
-        toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
+        //toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-stop-fill"></i> Stop`
         startTracking();
       } else {
@@ -674,14 +631,14 @@
       for (let el of a) {
         if (el == vall) {
           document.getElementsByClassName(el)[0].disabled = true;
-          if (el=='meters'){
-            if(!watchID){
-            document.querySelector('#spdunit').innerText = 'm/s'
+          if (el == 'meters') {
+            if (!watchID) {
+              document.querySelector('#spdunit').innerText = 'm/s'
             }
           }
-          else{
-            if(!watchID){
-            document.querySelector('#spdunit').innerText = el
+          else {
+            if (!watchID) {
+              document.querySelector('#spdunit').innerText = el
             }
           }
         }
@@ -695,7 +652,7 @@
         longitude,
         accuracy
       } = position.coords;
-      console.log(accsele.value)
+      console.log(toggleaccuracy)
       const currentTimestamp = position.timestamp;
       if (previousPosition && previousTimestamp) {
         const distance = getDistance(
@@ -733,10 +690,7 @@
             maxspeed = Number(speed.toFixed(2))
             ma.innerText = maxspeed
           }
-          if (showAcc) {
-            console.log(showAcc)
-            calcAcc(speed.toFixed(2), currentTimestamp)
-          }
+
         }
       }
       previousPosition = {
@@ -837,7 +791,6 @@
           document.getElementById("accuracy").innerText = "0";
           avg.innerText = '0';
           ma.innerText = '0';
-          document.querySelector('#acceleration').innerText = '0';
           speedCount = 0;
           totalSpeed = 0;
           maxspeed = 0;
@@ -848,27 +801,6 @@
       catch (err) {
         console.error(err)
       }
-    }
-
-    function calcAcc(speedval, timestamp) {
-      if (prevspeed && prevtime) {
-        const timewentby = (timestamp - prevtime) / 1000
-        const deltaspeed = (speedval - prevspeed) / 3.6
-        if (timewentby > 0) {
-          const reqaccel = (deltaspeed / timewentby)
-          document.querySelector('#acceleration').innerText = reqaccel.toFixed(2)
-        }
-      }
-      prevspeed = speedval
-      prevtime = timestamp
-    }
-
-    function plotGraph(type) {
-      alert(`This would display a ${type} graph in a full implementation.`);
-    }
-
-    function showSpeedIndicator() {
-      alert("This would show a visual speed indicator/gauge in a full implementation.");
     }
 
     // Initialize the page with better error handling

@@ -1,0 +1,178 @@
+document.querySelector('#acceleration').innerText = '0';
+let accsele = document.querySelector("#accselector");
+              <button type="button" id="modalopac" class="btn btn-primary d-none" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                Launch demo modal
+              </button>
+                <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Select Accuracy</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalmessage">
+          Please select an accuracy level before starting the speed tracker. High accuracy provides more precise
+          measurements but uses more battery.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<p id="pacceleration" class="text-center d-none">Acceleration:<span id="acceleration">0.00</span> m/s²</p>
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /*CSS EDIT*/
+    .typing-text {
+      animation: blink-caret 5s step-end infinite, fade-in 3s ease-in-out, move-down 3s ease-in-out;
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: orange;
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes move-down {
+      from {
+        transform: translateY(-20px);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    
+    #acceleration {
+      color: rgb(198, 80, 17);
+      font-size: 1.5rem;
+    }
+
+        .breadcrumb {
+      background-color: transparent;
+      padding: 0.75rem 0;
+    }
+
+    let pacc = document.querySelector("#pacceleration")
+    function plotGraph(type) {
+      alert(`This would display a ${type} graph in a full implementation.`);
+    }
+
+    function showSpeedIndicator() {
+      alert("This would show a visual speed indicator/gauge in a full implementation.");
+    }
+       function calcAcc(speedval, timestamp) {
+      if (prevspeed && prevtime) {
+        const timewentby = (timestamp - prevtime) / 1000
+        const deltaspeed = (speedval - prevspeed) / 3.6
+        if (timewentby > 0) {
+          const reqaccel = (deltaspeed / timewentby)
+          document.querySelector('#acceleration').innerText = reqaccel.toFixed(2)
+        }
+      }
+      prevspeed = speedval
+      prevtime = timestamp
+    }
+    if (showAcc) {
+            console.log(showAcc)
+            calcAcc(speed.toFixed(2), currentTimestamp)
+          }
+
+            <div id="advancedMenu" class="card d-none">
+          <div class="card-body text-center">
+            <form>
+              <div class="mb-3">
+                <label for="accselector" class="form-label">GPS Accuracy Setting</label>
+                <select id="accselector" class="form-select" aria-label="GPS accuracy selection">
+                  <!-- <option value="unknown" >Select Accuracy Level</option> -->
+                  <option value="true" selected>High (More Battery Usage)</option>
+                  <option value="false">Low (Battery Saver)</option>
+                </select>
+              </div>
+
+            </form>
+
+            <p class="text-danger mt-3" id="error"></p>
+            <div class="justify-content-center d-flex">
+              <br>
+              <button type="button" onclick="acctoggle()" class="btn btn-secondary btn-sm">Calculate
+                Acceleration</button>
+              <!-- <button type="button" onclick="plotGraph('speed')" class="btn btn-secondary btn-sm">Plot Speed Graph</button> -->
+              <!-- <button type="button" onclick="plotGraph('acceleration')" class="btn btn-secondary btn-sm">Plot Acceleration Graph</button> -->
+              <button type="button" onclick="showLocation()" class="btn btn-secondary btn-sm">See My Location</button>
+              <button type="button" onclick="showSpeedIndicator()" class="btn btn-secondary btn-sm">Show Speed
+                Indicator</button>
+            </div>
+            <div class="mt-4">
+              <h5>Advanced Options</h5>
+              <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <button type="button" onclick="acctoggle()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-speedometer2"></i> Toggle Acceleration
+                </button>
+                <button type="button" onclick="showLocation()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-geo-alt-fill"></i> Show Location
+                </button>
+                <button type="button" onclick="showSpeedIndicator()" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-speedometer"></i> Speed Indicator
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+                <div class="col-md-6">
+          <h3>Other Important Tools</h3>
+          <ul>
+            <li>
+              <a href="https://www.findspeedof.com/vande-bharat-train-speed-test">Vande Bharat Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/bullet-train-speed-test">Bullet Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/Subway-speed-test">Subway Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/Boat-speed-test">Boat Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/Jogging-speed-test">Jogging Speed Test</a>
+            </li>
+          </ul>
+        </div>
