@@ -59,3 +59,9 @@ SpeedoMeter.Live use GPS technology to track the location of the vehicle and cal
 
 
 This Online Speedometer uses GPS texhnology to track the location coordinates of the vehicle.
+
+
+Yes, it can. No matter what vehicle you are in, our tool can measure its speed.
+
+This usually happens when there GPS Signal is low or blocked.Move in an open area and refresh the website and again click Start.
+This usually happens when the GPS signal is low or blocked. Move to an open area, refresh the website, and click 'Start' again.
