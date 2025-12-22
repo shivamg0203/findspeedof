@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="Findspeedof ermöglicht es dir, deine Geschwindigkeit in Echtzeit mithilfe von GPS-Technologie zu messen – ganz ohne App-Installation.">
+  <link rel="canonical" href="https://www.findspeedof.com/de/">
+
+  <title>GPS-Geschwindigkeitsrechner | Echtzeit-Geschwindigkeitsmessung</title>
+
+  <meta name="keywords"
+    content="GPS Geschwindigkeitsrechner, Echtzeit Geschwindigkeitsmesser, Online Tacho, Geschwindigkeit messen, Laufgeschwindigkeit, Fahrradgeschwindigkeit, Fahrgeschwindigkeit">
+  <meta name="author" content="Shivam Gupta">
+  <meta name="robots" content="index, follow">
+   <!-- KEEP YOUR ORIGINAL STYLES -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/style.css">
+
+<style>
+    a {
+      color: white;
+    }
+
+    .accordion-button {
+      width: 80%;
+    }
+
+    .accordion-body {
+      width: 78%
+    }
+
+    body {
+      background-color: rgb(247, 249, 235);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    .pageheader {
+      background: dodgerblue;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /*CSS EDIT*/
+    #speed {
+      color: black;
+      font-size: 8rem;
+      font-weight: bold;
+    }
+
+    #accuracy {
+      color: #4b708c;
+      font-size: 1.5rem;
+    }
+
+    #avrg {
+      color: #2c7be5;
+      font-size: 1.5rem;
+    }
+    .accordion-header, .accordion-collapse{
+      display: flex;
+      justify-content: center;
+    }
+
+    #distance {
+      color: #3a5a6f;
+      font-size: 1.5rem;
+    }
+
+    #maxsp {
+      color: green;
+      font-size: 1.5rem;
+    }
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+      border: none;
+    }
+
+    .other-important-link {
+      list-style-type: none;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .btn-primary {
+      background-color: #4b708c;
+      border-color: #4b708c;
+    }
+
+    .btn-primary:hover {
+      background-color: #3a5a6f;
+      border-color: #3a5a6f;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4b708c;
+    }
+
+    footer {
+      background-color: #4b708c;
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .speed-display {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      font-size: 1.25rem !important;
+      font-weight: 400;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+      font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    }
+
+    .btn-light {
+      color: #212529;
+      background-color: #f8f9fa;
+      border-color: #717171;
+    }
+
+    .about {
+      margin-inline: 10px;
+      margin-block: 10px;
+    }
+
+    #readoutUnits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 cards per row */
+      gap: 8px;
+      /* slim space between cards */
+      max-width: 360px;
+      /* looks like a narrow phone screen */
+      margin: 0 auto;
+      /* center on larger screens */
+      padding: 4px;
+      margin-top: 12px;
+    }
+
+    /* Each metric tile */
+    #readoutUnits .measure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 2px 8px;
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      text-align: center;
+      width: -webkit-fill-available;
+    }
+
+    /* Optional: bump the font and spacing a bit on wider screens */
+    @media (min-width: 600px) {
+      #readoutUnits {
+        gap: 12px;
+      }
+
+      #readoutUnits .metric {
+        font-size: 1.1rem;
+        padding: 2px 10px;
+      }
+    }
+
+    .metricunit {
+      margin-bottom: 5px !important;
+      color: #757575 !important;
+    }
+
+    #spdunit {
+      font-weight: 700;
+      padding-left: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <h1 class="text-center pageheader">Findspeedof</h1>
+
+    <p class="text-center lead">
+      Verfolge deine Geschwindigkeit und Bewegungsdaten in Echtzeit mit einem Online-Tachometer.
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="text-center" style="display:grid">
+          <span id="speed">0</span>
+          <span id="spdunit">km/h</span>
+        </p>
+
+        <div class="d-flex justify-content-center mb-3">
+          <button class="btn btn-light kmph" disabled>Km/h</button>
+          <button class="btn btn-light meters">m/s</button>
+          <button class="btn btn-light mph">mph</button>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2">
+          <button id="strstpbtn" class="btn btn-info">
+            <i class="bi bi-play-fill"></i> Start
+          </button>
+          <button class="btn btn-info">Neu starten</button>
+          <button class="btn btn-info">
+            Mehr Optionen <i class="bi bi-arrow-down-square-fill"></i>
+          </button>
+        </div>
+
+        <p class="text-center text-danger" id="error"></p>
+      </div>
+    </div>
+
+    <article class="about">
+      Findspeedof.com ist ein kostenloser Online-Tachometer, mit dem du die Geschwindigkeit von Fahrzeugen oder Personen
+      in Echtzeit messen kannst. Du kannst damit die Geschwindigkeit von Zügen, Autos, Fahrrädern oder Läufern messen.
+      Das Tool basiert auf GPS-Technologie.
+    </article>
+
+    <section id="features" class="mt-5">
+      <h3 class="text-center mb-4">Hauptfunktionen</h3>
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-speedometer2 feature-icon"></i>
+              <h3 class="h5">Echtzeit-Geschwindigkeit</h3>
+              <p>Zeigt deine aktuelle Bewegungsgeschwindigkeit live an.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-graph-up feature-icon"></i>
+              <h3 class="h5">Keine App erforderlich</h3>
+              <p>Nutze den GPS-Tachometer direkt im Browser – ohne Installation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-battery-full feature-icon"></i>
+              <h3 class="h5">Mehrere Einheiten</h3>
+              <p>Wähle zwischen km/h, mph oder Meter pro Sekunde.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Anwendungsfälle und Funktionsweise</h2>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Anwendungsfälle</h3>
+              <ul>
+                <li>Zuggeschwindigkeit online messen</li>
+                <li>Autogeschwindigkeit live prüfen</li>
+                <li>Fahrradgeschwindigkeit messen</li>
+                <li>Lauf- oder Jogginggeschwindigkeit messen</li>
+                <li>Durchschnitts- und Höchstgeschwindigkeit anzeigen</li>
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <h3>So funktioniert es</h3>
+              <ul>
+                <li>Auf „Start“ klicken</li>
+                <li>Standortzugriff erlauben</li>
+                <li>Geschwindigkeitsmessung beginnt automatisch</li>
+                <li>Einheit nach Bedarf ändern</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mt-5">
+      <h2 class="text-center mb-4">Häufig gestellte Fragen</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed">
+              Wie genau ist der GPS-Geschwindigkeitsrechner?
+            </button>
+          </h3>
+          <div class="accordion-body">
+            Die Genauigkeit hängt vom GPS-Signal und den Umgebungsbedingungen ab. In der Regel liegt die Abweichung bei
+            ±0,5 bis 2 km/h.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed">
+              Funktioniert das auch auf dem iPhone?
+            </button>
+          </h3>
+          <div class="accordion-body">
+            Ja, der Online-Tachometer funktioniert problemlos auf iPhones – ganz ohne App.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container text-center">
+      <p>&copy; 2023 GPS-Geschwindigkeitsrechner. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+   <!-- KEEP YOUR JS EXACTLY SAME -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Findspeedof te permite conocer tu velocidad en tiempo real usando tecnología GPS sin instalar ninguna aplicación.">
+  <link rel="canonical" href="https://www.findspeedof.com/es/">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Findspeedof">
+  <meta name="apple-mobile-web-app-title" content="Findspeedof">
+
+  <title>Calculadora de Velocidad GPS | Seguimiento de Velocidad en Tiempo Real</title>
+
+  <meta name="keywords"
+    content="calculadora de velocidad GPS, velocímetro en línea, velocidad en tiempo real, velocidad de carrera, velocidad de ciclismo, velocidad de conducción">
+  <meta name="author" content="Shivam Gupta">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Calculadora de Velocidad GPS en Tiempo Real">
+  <meta property="og:description"
+    content="Calculadora de velocidad GPS precisa que mide velocidad actual, promedio, máxima y aceleración.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.findspeedof.com/es/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Calculadora de Velocidad GPS">
+  <meta name="twitter:description"
+    content="Mide tu velocidad en tiempo real sin instalar aplicaciones.">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/style.css">
+
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <h1 class="text-center pageheader">Findspeedof</h1>
+    <p class="text-center lead">
+      Rastrea tu velocidad en tiempo real y métricas de movimiento usando un velocímetro en línea.
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <p class="text-center">
+          <span id="speed">0</span>
+          <span id="spdunit">km/h</span>
+        </p>
+
+        <div class="d-flex justify-content-center mb-3">
+          <button class="btn btn-light kmph" disabled>Km/h</button>
+          <button class="btn btn-light meters">m/s</button>
+          <button class="btn btn-light mph">mph</button>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2">
+          <button id="strstpbtn" class="btn btn-info">
+            <i class="bi bi-play-fill"></i> Iniciar
+          </button>
+          <button class="btn btn-info">Reiniciar</button>
+          <button class="btn btn-info">
+            Más opciones <i class="bi bi-arrow-down-square-fill"></i>
+          </button>
+        </div>
+
+        <p class="text-center text-danger" id="error"></p>
+      </div>
+    </div>
+
+    <article class="about">
+      Findspeedof.com es un velocímetro en línea gratuito que mide la velocidad en tiempo real de cualquier objeto o
+      vehículo en movimiento. Puedes usarlo para verificar la velocidad de trenes, autos, bicicletas o atletas.
+      Funciona mediante tecnología GPS.
+    </article>
+
+    <section id="features" class="mt-5">
+      <h3 class="text-center mb-4">Características Principales</h3>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-speedometer2 feature-icon"></i>
+              <h3 class="h5">Velocidad en Tiempo Real</h3>
+              <p>Consulta la velocidad a la que te estás desplazando en este momento.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-graph-up feature-icon"></i>
+              <h3 class="h5">Sin Instalación</h3>
+              <p>Usa el velocímetro sin instalar ninguna aplicación.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <i class="bi bi-battery-full feature-icon"></i>
+              <h3 class="h5">Unidades Múltiples</h3>
+              <p>Selecciona km/h, mph o metros por segundo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Cómo Funciona el Velocímetro GPS</h2>
+
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Casos de Uso</h3>
+              <ul>
+                <li>Medir velocidad de trenes</li>
+                <li>Velocidad de autos en tiempo real</li>
+                <li>Velocidad de bicicletas</li>
+                <li>Velocidad al correr o caminar</li>
+                <li>Velocidad promedio y máxima</li>
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Cómo Usarlo</h3>
+              <ul>
+                <li>Haz clic en Iniciar</li>
+                <li>Permite el acceso a la ubicación</li>
+                <li>El seguimiento comienza automáticamente</li>
+                <li>Cambia la unidad de medida según prefieras</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="mt-5">
+      <h2 class="text-center mb-4">Preguntas Frecuentes</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed">
+              ¿Qué tan precisa es la calculadora de velocidad GPS?
+            </button>
+          </h3>
+          <div class="accordion-body">
+            La precisión depende del GPS del dispositivo y del entorno. Normalmente el error es de ±0.5 a 2 km/h.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed">
+              ¿Funciona en iPhone?
+            </button>
+          </h3>
+          <div class="accordion-body">
+            Sí, funciona perfectamente en iPhone sin necesidad de instalar aplicaciones.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Other Important Tools</h3>
+          <ul class="other-important-link">
+            <li>
+              <a href="https://www.findspeedof.com/vande-bharat-train-speed-test">Vande Bharat Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/bullet-train-speed-test">Bullet Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://www.findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
+            </li>
+
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://www.findspeedof.com/about-us">About</a></li>
+            <li><a href="https://www.findspeedof.com/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://www.findspeedof.com/contact-us">Contact Us</a></li>
+            <li><a href="https://www.findspeedof.com/terms-and-conditions">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Share</h3>
+          <ul class="list-unstyled">
+            <li><a
+                href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://www.findspeedof.com"
+                target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://www.findspeedof.com" target="_blank"
+                rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A"
+                onclick="this.href='https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A' + encodeURIComponent(window.location.href);"
+                target="_blank" class="bi">
+                <i class="bi bi-instagram"></i> Whatsapp</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">&copy; 2023 GPS Speed Calculator. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>
