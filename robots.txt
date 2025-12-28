@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary internal files (optional but clean)
+Disallow: /assets/plan.txt
+Disallow: /README.md
+
+# Sitemap location
+Sitemap: https://www.findspeedof.com/sitemap.xml
