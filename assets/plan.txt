@@ -82,3 +82,15 @@ Vande Bharat Express, also known as Train 18, is India’s flagship semi-high-sp
 
 
 https://developers.google.com/search/docs/crawling-indexing/special-tags
+
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Findspeedof">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name=apple-mobile-web-app-title content=Findspeedof>
+  <link rel="manifest" href="/assets/images/site.webmanifest" />
+
+      <meta name="theme-color" content="#3f51b5">
+  <meta name="msapplication-TileColor" content="#3f51b5">
+  <meta name="msapplication-TileImage" content="/images/touch/findspeedof_144.png">
