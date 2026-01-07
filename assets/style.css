@@ -51,7 +51,47 @@ body {
       margin-inline: 10px;
       margin-block: 10px;
     }
+        /* Each metric tile */
+    #readoutUnits .measure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 2px 8px;
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      text-align: center;
+      width: -webkit-fill-available;
+    }
+    #readoutUnits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* 2 cards per row */
+      gap: 8px;
+      /* slim space between cards */
+      max-width: 360px;
+      /* looks like a narrow phone screen */
+      margin: 0 auto;
+      /* center on larger screens */
+      padding: 4px;
+      margin-top: 12px;
+    }
+    
+    /* Optional: bump the font and spacing a bit on wider screens */
+    @media (min-width: 600px) {
+      #readoutUnits {
+        gap: 12px;
+      }
 
+      #readoutUnits .metric {
+        font-size: 1.1rem;
+        padding: 2px 10px;
+      }
+    }
     /* .accordion-item{
       padding-block-end: 3px;
     } */
