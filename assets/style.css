@@ -1,11 +1,12 @@
-body {
-    background-color: rgb(247, 249, 235);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-}
-.accordion-collapse {
-    margin-bottom: 8px;
-}
+    body {
+        background-color: rgb(247, 249, 235);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+    }
+    .metricunit {
+      margin-bottom: 5px !important;
+      color: #757575 !important;
+    }
    .card {
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
@@ -20,6 +21,10 @@ body {
     .btn-primary:hover {
       background-color: #3a5a6f;
       border-color: #3a5a6f;
+    }
+    #spdunit {
+      font-weight: 700;
+      padding-left: 5px;
     }
 
     .feature-icon {
