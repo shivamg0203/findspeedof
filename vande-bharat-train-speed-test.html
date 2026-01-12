@@ -186,9 +186,9 @@
           <div class="justify-content-center d-flex" style="padding-top:1rem;padding-bottom:1rem;">
             <div class="mb-3">
               <!-- <option value="unknown" >Select Accuracy Level</option> -->
-              <button type="button" onclick="speedunitfunc('kmph')" class="btn btn-light kmph" disabled>Km/h</button>
-              <button type="button" onclick="speedunitfunc('meters')" class="btn btn-light meters">m/s</button>
-              <button type="button" onclick="speedunitfunc('mph')" class="btn btn-light mph">mph</button>
+              <button type="button" onclick="speedunitfunc('kmph')" class="btn btn-light kmph" disabled>Km/hr</button>
+              <button type="button" onclick="speedunitfunc('meters')" class="btn btn-light meters">Meter/sec</button>
+              <button type="button" onclick="speedunitfunc('mph')" class="btn btn-light mph">Miles/hr</button>
 
             </div>
           </div>
@@ -530,7 +530,7 @@ world-class amenities for passengers across major intercity routes.</p>
         longitude,
         accuracy
       } = position.coords;
-      console.log(toggleaccuracy)
+      //console.log(toggleaccuracy)
       const currentTimestamp = position.timestamp;
       if (previousPosition && previousTimestamp) {
         const distance = getDistance(
@@ -632,7 +632,7 @@ world-class amenities for passengers across major intercity routes.</p>
         let details = navigator.userAgent;
         let regexp = /android|iphone|kindle|ipad/i;
         let isMobileDevice = regexp.test(details);
-        console.log(toggleaccuracy)
+        //console.log(toggleaccuracy)
         var vartimeout;
         if (isMobileDevice) {
           vartimeout = 5000;
@@ -673,7 +673,7 @@ world-class amenities for passengers across major intercity routes.</p>
           totalSpeed = 0;
           maxspeed = 0;
           average = 0;
-          console.log("stopping")
+          //console.log("stopping")
         }
       }
       catch (err) {
