@@ -4,13 +4,12 @@
   <title>GPS-Geschwindigkeitsrechner | Echtzeit-Geschwindigkeitsmessung | FindSpeedOf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-  <meta content="Findspeedof lets you find your real-time speed using GPS technology without installing any kind if app."
-    name="description" />
+  <meta name="description" content="Prüfen Sie Ihre Geschwindigkeit in Echtzeit online per GPS in km/h. FindSpeedOf funktioniert auf Mobilgeräten und Desktop-Computern, ohne dass eine App installiert werden muss." />
   <link rel="alternate" hreflang="x-default" href="https://www.findspeedof.com/">
   <link rel="alternate" hreflang="en" href="https://www.findspeedof.com/">
   <link rel="alternate" hreflang="es" href="https://www.findspeedof.com/es/">
   <link rel="alternate" hreflang="de" href="https://www.findspeedof.com/de/">
-
+  <link rel="canonical" href="https://findspeedof.com/de/" />
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico" />
@@ -19,22 +18,20 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="msapplication-TileImage" content="/images/touch/web-app-manifest-192x192.png">
 
-  <meta content="/images/touch/findspeedof_144.png" name="msapplication-TileImage" />
-  <meta content="#3f51b5" name="msapplication-TileColor" />
-  <meta content="Findspeedof" property="og:title" />
-  <meta content="website" property="og:type" />
-  <meta content="https://www.findspeedof.in/images/touch/findspeedof_192.png" property="og:image" />
-  <meta content="https://www.findspeedof.in/" property="og:url" />
-  <meta content="Check your real-time speed in km/h. No installation needed. Use it right away!"
-    property="og:description" />
-  <meta content="summary" name="twitter:card" />
-  <meta content="https://www.findspeedof.in/" name="twitter:url" />
-  <meta content="Findspeedof" name="twitter:title" />
-  <meta content="Check your real-time speed in km/h. No installation needed. Use it right away!"
-    name="twitter:description" />
-  <meta content="https://www.findspeedof.in/images/touch/findspeedof_192.png" name="twitter:image" />
-  <meta content="ca-pub-5200094130124288" name="google-adsense-account" />
+  <meta property="og:locale" content="de" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Online-Live-GPS-Tachometer – Überprüfen Sie Ihre Geschwindigkeit in Echtzeit" />
+  <meta property="og:description" content="Miss deine aktuelle Geschwindigkeit live mit GPS – ohne App, kostenlos im Browser." />
+  <meta property="og:url" content="https://findspeedof.com/de/" />
+  <meta property="og:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+  <meta property="og:site_name" content="FindSpeedOf" />
 
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GPS-Geschwindigkeitsmesser | Echtzeit Speedtest" />
+  <meta name="twitter:description"
+    content="Kostenloser GPS-Speedtest zur Messung deiner Geschwindigkeit in Echtzeit." />
+  <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVPRT0GLGT"></script>
   <script>
@@ -43,30 +40,44 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-XVPRT0GLGT");
   </script>
 
-  <meta content="Findspeedof" property="og:site_name" />
   <!-- Primary Meta Tags -->
 
 
+<!-- Structured Data -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "GPS Speed Calculator",
-        "description": "Real-time speed tracking tool using GPS technology",
-        "url": "https://findspeedof.com/gps-speed-calculator",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://findspeedof.com/de/#webapp",
+    "name": "GPS-Geschwindigkeitsmesser",
+    "alternateName": "Online-GPS-Tachometer",
+    "description": "Kostenloses Online-GPS-Tool zur Messung der aktuellen Geschwindigkeit in Echtzeit in km/h, mph oder m/s – direkt im Browser, ohne App.",
+    "url": "https://findspeedof.com/de/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "browserRequirements": "GPS-fähiger Browser erforderlich",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "FindSpeedOf",
+      "url": "https://findspeedof.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://findspeedof.com/assets/images/findspeedof.png",
+        "width": 512,
+        "height": 512
       }
-    </script>
+    }
+  }
+  </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
@@ -176,49 +187,6 @@
     .about {
       margin-inline: 10px;
       margin-block: 10px;
-    }
-
-    #readoutUnits {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      /* 2 cards per row */
-      gap: 8px;
-      /* slim space between cards */
-      max-width: 360px;
-      /* looks like a narrow phone screen */
-      margin: 0 auto;
-      /* center on larger screens */
-      padding: 4px;
-      margin-top: 12px;
-    }
-
-    /* Each metric tile */
-    #readoutUnits .measure {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-      padding: 2px 8px;
-      background: #ffffff;
-      border: 1px solid #e2e2e2;
-      border-radius: 10px;
-      font: 600 1rem/1.2 "Segoe UI", Roboto, sans-serif;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: -webkit-fill-available;
-    }
-
-    /* Optional: bump the font and spacing a bit on wider screens */
-    @media (min-width: 600px) {
-      #readoutUnits {
-        gap: 12px;
-      }
-
-      #readoutUnits .metric {
-        font-size: 1.1rem;
-        padding: 2px 10px;
-      }
     }
 
     .metricunit {
@@ -402,10 +370,6 @@ km/h, mph oder Meter pro Sekunde (m/s).
                     Live-Fahrradgeschwindigkeitstest
                   </li>
                   <li>
-                    Fahrradgeschwindigkeit online messen oder
-                    Live-Fahrradgeschwindigkeitstest
-                  </li>
-                  <li>
                     Überprüfen Sie die Busgeschwindigkeit online oder nutzen
                     Sie einen Live-Busgeschwindigkeitstest.
                   </li>
@@ -506,9 +470,7 @@ km/h, mph oder Meter pro Sekunde (m/s).
           <div aria-labelledby="headingFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseFour">
             <div class="accordion-body">
-              This usually happens when the GPS signal is low or blocked. Move
-              to an open area, refresh the website, allow location access and
-              click 'Start' button again.
+              Dies geschieht üblicherweise bei schwachem oder blockiertem GPS-Signal. Begeben Sie sich in einen offenen Bereich, aktualisieren Sie die Webseite, erlauben Sie den Standortzugriff und klicken Sie erneut auf „Start“.
             </div>
           </div>
         </div>
@@ -566,7 +528,7 @@ km/h, mph oder Meter pro Sekunde (m/s).
       <div class="row">
         <div class="col-md-12 text-center">
           <p class="mb-0">
-            © 2026 GPS Speed Calculator. All rights reserved.
+           © 2026 FindSpeedOf.com. All rights reserved.
           </p>
         </div>
       </div>
@@ -576,90 +538,59 @@ km/h, mph oder Meter pro Sekunde (m/s).
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     let watchID;
-
     let previousPosition;
-
     let previousTimestamp;
-
     let toggleaccuracy = true;
-
     let modalsbut = document.querySelector("#modalopac");
-
     let avg = document.querySelector("#avrg");
-
     let ma = document.querySelector("#maxsp");
-
     let prevspeed, prevtime;
-
     //let showAcc = false;
-
     let speedCount = 0;
-
     let totalSpeed = 0;
-
     let maxspeed = 0;
-
     let average = 0;
-
     let unit = "kmph";
-
     let tracking = false;
-
     function restart() {
       stopTracking();
-
       if (!tracking) {
         starter();
       } else {
         startTracking();
       }
     }
-
     function starter() {
       if (!tracking) {
         tracking = true;
-
         //toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
-
         document.querySelector(
           "#strstpbtn"
         ).innerHTML = `<i class="bi bi-stop-fill"></i> Stop`;
-
         startTracking();
       } else {
         document.querySelector(
           "#strstpbtn"
         ).innerHTML = `<i class="bi bi-play-fill"></i> Start`;
-
         stopTracking();
-
         tracking = false;
       }
-
       /*if (manageAccuracy()) {console.log(accsele.value)startTracking(); }*/
     }
-
     function stopper() {
       stopTracking();
     }
-
     function toggleAdvancedMenu() {
       const advancedMenu = document.getElementById("readoutUnits");
-
       advancedMenu.classList.toggle("d-none");
     }
-
     function speedunitfunc(vall) {
       /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
-
       a = ["meters", "mph", "kmph"];
-
       unit = vall;
-
       for (let el of a) {
         if (el == vall) {
           document.getElementsByClassName(el)[0].disabled = true;
-
           if (el == "meters") {
             if (!watchID) {
               document.querySelector("#spdunit").innerText = "m/s";
@@ -678,86 +609,58 @@ km/h, mph oder Meter pro Sekunde (m/s).
     function calculateSpeed(position) {
       const {
         latitude,
-
         longitude,
-
         accuracy,
       } = position.coords;
-
       //console.log(toggleaccuracy)
-
       const currentTimestamp = position.timestamp;
-
       if (previousPosition && previousTimestamp) {
         const distance = getDistance(
           previousPosition.latitude,
-
           previousPosition.longitude,
-
           latitude,
-
           longitude
         );
-
         const timeElapsed = (currentTimestamp - previousTimestamp) / 1000; // in seconds
-
         if (timeElapsed > 0) {
           let speed = distance / timeElapsed; // m/s
-
           if (unit === "kmph") {
             speed = speed * 3.6;
-
             //unitLabel = 'km/h';
-
             document.getElementById("speed").innerText = `${speed.toFixed(
               2
             )}`;
           } else if (unit === "mph") {
             speed = speed * 2.23694;
-
             document.getElementById("speed").innerText = `${speed.toFixed(
               2
             )}`;
-
             // unitLabel = 'mph';
           } else {
             //speed = rawSpeedMS;
-
             document.getElementById("speed").innerText = `${speed.toFixed(
               2
             )}`;
-
             //unitLabel = 'm/s';
           }
-
           //document.getElementById("speed").innerText = speed.toFixed(2);
-
           document.getElementById("accuracy").innerText = accuracy.toFixed(2);
-
           totalSpeed += speed;
-
           speedCount += 1;
-
           if (speedCount > 0) {
             average = Number(totalSpeed / speedCount);
           }
-
           avg.innerText = average.toFixed(2);
-
           if (speed.toFixed(2) > maxspeed) {
             maxspeed = Number(speed.toFixed(2));
-
             ma.innerText = maxspeed;
           }
         }
       }
-
       previousPosition = {
         latitude,
-
         longitude,
       };
-
       previousTimestamp = currentTimestamp;
     }
 
@@ -784,17 +687,13 @@ km/h, mph oder Meter pro Sekunde (m/s).
           document.getElementById("error").innerText =
             "Location information is unavailable. Please check your GPS signal.";
           break;
-
         case error.TIMEOUT:
           document.getElementById("error").innerText =
             "The request to get user location timed out. Please try again.";
-
           break;
-
         case error.UNKNOWN_ERROR:
           document.getElementById("error").innerText =
             "An unknown error occurred. Please refresh the page and try again.";
-
           break;
       }
     }
@@ -804,10 +703,8 @@ km/h, mph oder Meter pro Sekunde (m/s).
         navigator.geolocation.getCurrentPosition((position) => {
           const {
             latitude,
-
             longitude,
           } = position.coords;
-
           alert(
             `Your current location:\nLatitude: ${latitude}\nLongitude: ${longitude}\nAccuracy: ${position.coords.accuracy} meters`
           );
@@ -821,24 +718,17 @@ km/h, mph oder Meter pro Sekunde (m/s).
     function startTracking() {
       try {
         let details = navigator.userAgent;
-
         let regexp = /android|iphone|kindle|ipad/i;
-
         let isMobileDevice = regexp.test(details);
-
         //console.log(toggleaccuracy)
-
         var vartimeout;
-
         if (isMobileDevice) {
           vartimeout = 5000;
-
           console.log(
             `Mobile device detected - using faster update interval (${vartimeout}ms)`
           );
         } else {
           vartimeout = 15000;
-
           console.log(
             `Desktop detected - using slower update interval (${vartimeout}ms)`
           );
@@ -846,17 +736,13 @@ km/h, mph oder Meter pro Sekunde (m/s).
       } catch (e) {
         console.error(`Error detecting device type: ${e}`);
       }
-
       if (navigator.geolocation) {
         watchID = navigator.geolocation.watchPosition(
           calculateSpeed,
-
           showError,
           {
             enableHighAccuracy: toggleaccuracy,
-
             maximumAge: 1000,
-
             timeout: 15000,
           }
         );
@@ -870,25 +756,15 @@ km/h, mph oder Meter pro Sekunde (m/s).
       try {
         if (navigator.geolocation && watchID !== undefined) {
           navigator.geolocation.clearWatch(watchID);
-
           watchID = undefined;
-
           document.getElementById("speed").innerText = "0";
-
           document.getElementById("accuracy").innerText = "0";
-
           avg.innerText = "0";
-
           ma.innerText = "0";
-
           speedCount = 0;
-
           totalSpeed = 0;
-
           maxspeed = 0;
-
           average = 0;
-
           //console.log("stopping")
         }
       } catch (err) {
