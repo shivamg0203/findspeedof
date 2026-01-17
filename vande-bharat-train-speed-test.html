@@ -546,26 +546,26 @@ world-class amenities for passengers across major intercity routes.</p>
           if (unit === 'kmph') {
             speed = speed * 3.6;
             //unitLabel = 'km/h';
-            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+            document.getElementById("speed").innerText = `${speed.toFixed(1)}`;
           } else if (unit === 'mph') {
             speed = speed * 2.23694;
-            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+            document.getElementById("speed").innerText = `${speed.toFixed(1)}`;
             // unitLabel = 'mph';
           } else {
             //speed = rawSpeedMS;
-            document.getElementById("speed").innerText = `${speed.toFixed(2)}`;
+            document.getElementById("speed").innerText = `${speed.toFixed(1)}`;
             //unitLabel = 'm/s';
           }
-          //document.getElementById("speed").innerText = speed.toFixed(2);
-          document.getElementById("accuracy").innerText = accuracy.toFixed(2);
+          //document.getElementById("speed").innerText = speed.toFixed(1);
+          document.getElementById("accuracy").innerText = accuracy.toFixed(1);
           totalSpeed += speed;
           speedCount += 1;
           if (speedCount > 0) {
             average = Number(totalSpeed / speedCount)
           }
-          avg.innerText = average.toFixed(2)
-          if (speed.toFixed(2) > maxspeed) {
-            maxspeed = Number(speed.toFixed(2))
+          avg.innerText = average.toFixed(1)
+          if (speed.toFixed(1) > maxspeed) {
+            maxspeed = Number(speed.toFixed(1))
             ma.innerText = maxspeed
           }
 
