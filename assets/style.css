@@ -13,9 +13,58 @@
       margin-bottom: 20px;
       border: none;
     }
+        /*CSS EDIT*/
+    #speed {
+      color: black;
+      font-size: 8rem;
+      font-weight: bold;
+    }
+    
+    #accuracy {
+      color: #4b708c;
+      font-size: 1.5rem;
+    }
+    
+    .lead {
+      font-size: 1.25rem !important;
+      font-weight: 400;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+      font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+    }
+    
+
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 20px;
+      border: none;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    #avrg {
+      color: #2c7be5;
+      font-size: 1.5rem;
+    }
+
+    #distance {
+      color: #3a5a6f;
+      font-size: 1.5rem;
+    }
+
+    #maxsp {
+      color: green;
+      font-size: 1.5rem;
+    }
      .btn-primary {
       background-color: #4b708c;
       border-color: #4b708c;
+    }
+    .pageheader {
+      background: dodgerblue;
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
     .btn-primary:hover {
@@ -43,10 +92,16 @@
         a {
       color: white!important;
     }
+    .list-unstyled a{
+      /* text-decoration: none; */
+    }
 
-        .other-important-link a{
+    .other-important-link{
       list-style-type: none;
-      text-decoration: none!important;
+      padding-left: 0;
+    }
+    .other-important-link a{
+      /* text-decoration: none!important; */
     }
     .btn-light {
       color: #212529;
