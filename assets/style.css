@@ -44,8 +44,9 @@
       color: white!important;
     }
 
-        .other-important-link {
+        .other-important-link a{
       list-style-type: none;
+      text-decoration: none!important;
     }
     .btn-light {
       color: #212529;
