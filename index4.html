@@ -437,45 +437,88 @@
     }
 
     function calculateSpeed(position) {
-    const { speed, accuracy } = position.coords;
-    const currentTimestamp = position.timestamp;
+    const {
+        latitude,
+        longitude,
+        accuracy,
+        speed: gpsSpeed
+    } = position.coords;
+
+    const now = position.timestamp;
+
     document.getElementById("accuracy").innerText = accuracy.toFixed(1);
-    // Ignore bad accuracy
+
+    // ❌ Ignore poor GPS
     if (accuracy > MAX_ACCURACY) return;
-    // coords.speed can be null
-    if (speed === null || speed < 0) return;
-    // Init time
+
+    // Init start
     if (!startTime) {
-        startTime = currentTimestamp;
-        previousTimestamp = currentTimestamp;
+        startTime = now;
+        previousPosition = { latitude, longitude };
+        previousTimestamp = now;
         return;
     }
-    const deltaTime = (currentTimestamp - previousTimestamp) / 1000;
-    if (deltaTime <= 0) return;
-    // ✅ SPEED (base m/s)
-    const speedMS = speed;
-    // Ignore unrealistic spikes
+
+    const dt = (now - previousTimestamp) / 1000;
+    if (dt < MIN_TIME_DIFF) return;
+
+    let speedMS = null;
+    let distance = 0;
+
+    /* ============================
+        1️⃣ SPEED SOURCE SELECTION
+        ============================ */
+
+    if (gpsSpeed !== null && gpsSpeed >= 0) {
+        // ✅ GPS chipset speed (best)
+        speedMS = gpsSpeed;
+        distance = speedMS * dt;
+    } else {
+        // 🔁 Fallback to coordinate math
+        distance = getDistance(
+        previousPosition.latitude,
+        previousPosition.longitude,
+        latitude,
+        longitude
+        );
+
+        if (distance < 0.5) return; // ignore drift
+        speedMS = distance / dt;
+    }
+
+    // ❌ Kill insane spikes
     if (speedMS * 3.6 > MAX_SPEED_KMPH) return;
-    // ✅ DISTANCE = ∫ v dt
-    const deltaDistance = speedMS * deltaTime;
-    totalDistance += deltaDistance;
-    document.getElementById("distance").innerText = totalDistance.toFixed(1);
-    // Unit conversion
+
+    /* ============================
+        2️⃣ DISTANCE (time-integrated)
+        ============================ */
+    totalDistance += distance;
+    document.getElementById("distance").innerText =
+        totalDistance.toFixed(1);
+
+    /* ============================
+        3️⃣ SPEED DISPLAY
+        ============================ */
     let displaySpeed;
     if (unit === "kmph") displaySpeed = speedMS * 3.6;
     else if (unit === "mph") displaySpeed = speedMS * 2.23694;
     else displaySpeed = speedMS;
+
     document.getElementById("speed").innerText =
         displaySpeed.toFixed(1);
 
-    // ✅ MAX SPEED
+    /* ============================
+        4️⃣ MAX SPEED
+        ============================ */
     if (displaySpeed > maxspeed) {
         maxspeed = displaySpeed;
         ma.innerText = maxspeed.toFixed(1);
     }
 
-    // ✅ AVERAGE SPEED = total distance / total time
-    const totalTime = (currentTimestamp - startTime) / 1000;
+    /* ============================
+        5️⃣ TRUE AVERAGE SPEED
+        ============================ */
+    const totalTime = (now - startTime) / 1000;
     if (totalTime > 0) {
         const avgSpeedMS = totalDistance / totalTime;
         const avgSpeed =
@@ -486,8 +529,10 @@
         avg.innerText = avgSpeed.toFixed(1);
     }
 
-    previousTimestamp = currentTimestamp;
+    previousPosition = { latitude, longitude };
+    previousTimestamp = now;
     }
+
 
 
     function getDistance(lat1, lon1, lat2, lon2) {
