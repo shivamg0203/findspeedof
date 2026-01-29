@@ -415,7 +415,11 @@
       advancedMenu.classList.toggle('d-none');
     }
 
-    function speedunitfunc(vall) {    /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
+
+    
+
+  /*  function speedunitfunc(vall) {    /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
+     /* console.log(vall)
       a = ['meters', 'mph', 'kmph']
       unit = vall;
       for (let el of a) {
@@ -430,6 +434,24 @@
             if (!watchID) {
               document.querySelector('#spdunit').innerText = el
             }
+          }
+        }
+        else { document.getElementsByClassName(el)[0].disabled = false; }
+      }
+    }*/
+
+    function speedunitfunc(vall) {    /*DISABLEING BUTTON OF KMPH OR MPS WHEN CLICK AND ENABLE OTHERS*/
+      console.log(vall)
+      a = ['meters', 'mph', 'kmph']
+      unit = vall;
+      for (let el of a) {
+        if (el == vall) {
+          document.getElementsByClassName(el)[0].disabled = true;
+          if (el == 'meters') {
+              document.querySelector('#spdunit').innerText = 'm/s'
+          }
+          else {
+              document.querySelector('#spdunit').innerText = el
           }
         }
         else { document.getElementsByClassName(el)[0].disabled = false; }
@@ -490,20 +512,6 @@
     }
 
 
-    function getDistance(lat1, lon1, lat2, lon2) {
-      const R = 6371e3; // metres
-      const φ1 = (lat1 * Math.PI) / 180;
-      const φ2 = (lat2 * Math.PI) / 180;
-      const Δφ = ((lat2 - lat1) * Math.PI) / 180;
-      const Δλ = ((lon2 - lon1) * Math.PI) / 180;
-      const a =
-        Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-        Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-      const distance = R * c; // in metres
-      return distance;
-    }
-
     function showError(error) {
       switch (error.code) {
         case error.PERMISSION_DENIED:
@@ -559,15 +567,19 @@
 
     function stopTracking() {
       try {
-        if (navigator.geolocation && watchID !== undefined) {
+        if (navigator.geolocation && watchID !== null) {
           navigator.geolocation.clearWatch(watchID);
-          watchID = undefined;
+          watchID = null;
           document.getElementById("speed").innerText = "0";
           document.getElementById("accuracy").innerText = "0";
+          document.getElementById("distance").innerText ='0';
           avg.innerText = '0';
           ma.innerText = '0';
+          startTime = null;
+          previousTimestamp = null;
           speedCount = 0;
           totalSpeed = 0;
+          totalDistance = 0;
           maxspeed = 0;
           average = 0;
           //console.log("stopping")
