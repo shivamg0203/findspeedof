@@ -426,10 +426,8 @@
     const fmtSpeed = v => v < 1 ? v.toFixed(1) : Math.round(v);
     const fmtAvg   = v => v < 5 ? v.toFixed(1) : Math.round(v);
     const fmtDist  = m => {
-    const km = m / 1000;
-      if (km < 1) return km.toFixed(2);
-      if (km < 10) return km.toFixed(1);
-      return Math.round(km);
+      if (m < 10) return m.toFixed(1);
+      else return Math.round(m)
     };
 
 
