@@ -423,6 +423,16 @@
       }
     }
 
+    const fmtSpeed = v => v < 1 ? v.toFixed(1) : Math.round(v);
+    const fmtAvg   = v => v < 5 ? v.toFixed(1) : Math.round(v);
+    const fmtDist  = m => {
+    const km = m / 1000;
+      if (km < 1) return km.toFixed(2);
+      if (km < 10) return km.toFixed(1);
+      return Math.round(km);
+    };
+
+
     function calculateSpeed(position) {
       const { speed, accuracy } = position.coords;
       const currentTimestamp = position.timestamp;
@@ -452,13 +462,13 @@
       if (unit === "kmph") displaySpeed = speedMS * 3.6;
       else if (unit === "mph") displaySpeed = speedMS * 2.23694;
       else displaySpeed = speedMS;
-      document.getElementById("speed").innerText =
-        displaySpeed.toFixed(1);
+      //document.getElementById("speed").innerText =displaySpeed.toFixed(1);
+      document.getElementById("speed").innerText =fmtSpeed(displaySpeed);
 
       // MAX SPEED
       if (displaySpeed > maxspeed) {
         maxspeed = displaySpeed;
-        ma.innerText = maxspeed.toFixed(1);
+        ma.innerText = fmtAvg(maxspeed);
       }
       // AVERAGE SPEED = total distance / total time
       const totalTime = (currentTimestamp - startTime) / 1000;
