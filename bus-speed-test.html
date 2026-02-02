@@ -517,7 +517,7 @@
       }
     }
 
-    const fmtSpeed = v => v < 1 ? v.toFixed(1) : Math.round(v);
+    const fmtSpeed = v => Math.round(v);
     const fmtAvg   = v => v < 5 ? v.toFixed(1) : Math.round(v);
     const fmtDist  = m => {
       if (m < 10) return m.toFixed(1);
