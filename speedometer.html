@@ -2,36 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset=utf-8>
-  <title>Bus Speedometer & Public Transport Speed Test | Findspeedof</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv=X-UA-Compatible content="IE=edge">
-  <meta name=description
-    content="Check how fast your bus is moving online with GPS speedometer. Measure public transport speed in kmph, mph or m/s without installing app.">
-  <meta name=viewport content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://findspeedof.com/bus-speed-test">
-  
+  <title>Findspeedof - Online Speedometer</title>
+  <meta name="description"
+    content="Findspeedof is an online speedometer that accuratly measures your current speed. Works on android as well as iOS devices.">
+  <link rel="canonical" href="https://findspeedof.com/speedometer">
   <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
   <link rel="shortcut icon" href="/assets/images/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
-
-    <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Bus Speedometer & Public Transport Speed Test | Findspeedof">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="msapplication-TileImage" content="/images/touch/web-app-manifest-192x192.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FindSpeedOf - Online Speedometer" />
   <meta property="og:description"
-    content="Track real-time bus speed using GPS on mobile or desktop. No app required.">
-  <meta property="og:url" content="https://findspeedof.com/bus-speed-test">
-  <meta property="og:site_name" content="FindSpeedOf">
-  <meta property="og:image" content="https://findspeedof.com/assets/images/findspeedof.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="msapplication-TileImage" content="/assets/images/web-app-manifest-192x192.png">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Bus Speedometer & Public Transport Speed Test | Findspeedof">
+    content="Findspeedof is an online speedometer that accuratly measures your current speed. Works on android as well as iOS devices." />
+  <meta property="og:url" content="https://findspeedof.com/speedometer" />
+  <meta property="og:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+  <meta property="og:image:alt" content="FindSpeedOf – Real-Time GPS Speed Calculator" />
+  <meta property="og:site_name" content="FindSpeedOf" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FindSpeedOf - Online Speedometer" />
+  <meta name="twitter:url" content="https://findspeedof.com/speedometer" />
   <meta name="twitter:description"
-    content="Do you know the speed of your bus? Track it in Real-Time using Findspeedof's free Online Speedometer. Measure public transport speed in kmph, mph or m/s without installing app.">
-  <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png">
+    content="Findspeedof is an online speedometer that accuratly measures your current speed. Works on android as well as iOS devices." />
+  <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVPRT0GLGT"></script>
@@ -39,22 +38,21 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-XVPRT0GLGT');
   </script>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "@id": "https://findspeedof.com/bus-speed-test#webapp",
-  "name": "Bus Speed Test – FindSpeedOf",
-  "alternateName": "Bus Live Speedometer",
-  "url": "https://findspeedof.com/bus-speed-test",
-  "description": "Track real-time bus speed online using GPS. FindSpeedOf measures live public transport speed in km/h, mph, and m/s directly in your browser without installing any app.",
+  "@type": "SoftwareApplication",
+  "@id": "https://findspeedof.com/speedometer#software",
+  "name": "Findspeedof – Online Speedometer",
+  "description": "FindSpeedOf is a free online GPS speedometer that accurately measures your real-time speed in km/h directly in your browser. Works on Android, iOS, and desktop without installing any app.",
+  "url": "https://findspeedof.com/speedometer",
   "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "All",
-  "browserRequirements": "Requires GPS-enabled browser",
-  "isAccessibleForFree": true,
+  "operatingSystem": "Android, iOS, Windows, macOS",
+  "inLanguage": "en",
+  "keywords": "online speedometer, GPS speedometer, real-time speed checker, speed test online, vehicle speed meter",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -74,89 +72,10 @@
 }
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel=stylesheet href="assets/style.css">
   <style>
-
-    .pageheader {
-      background: dodgerblue;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    /*CSS EDIT*/
-    #speed {
-      color: black;
-      font-size: 8rem;
-      font-weight: bold;
-    }
-
-    #accuracy {
-      color: #4b708c;
-      font-size: 1.5rem;
-    }
-
-    .about {
-      justify-content: center;
-      display: flex;
-      margin-inline: 10px;
-      margin-block: 10px;
-    }
-
-    #avrg {
-      color: #2c7be5;
-      font-size: 1.5rem;
-    }
-
-
-    #distance {
-      color: #3a5a6f;
-      font-size: 1.5rem;
-    }
-
-    #maxsp {
-      color: green;
-      font-size: 1.5rem;
-    }
-
-    .card {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      margin-bottom: 20px;
-      border: none;
-    }
-
-    .other-important-link {
-      list-style-type: none;
-    }
-
-    .card-body {
-      padding: 1.5rem;
-    }
-
-    .btn-primary {
-      background-color: #4b708c;
-      border-color: #4b708c;
-    }
-
-    .btn-primary:hover {
-      background-color: #3a5a6f;
-      border-color: #3a5a6f;
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #4b708c;
-    }
-
-    footer {
-      background-color: #4b708c;
-      color: white;
-      padding: 2rem 0;
-      margin-top: 3rem;
-    }
-
     .speed-display {
       background-color: white;
       border-radius: 10px;
@@ -164,33 +83,14 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
     }
-
-    .lead {
-      font-size: 1.25rem !important;
-      font-weight: 400;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-      font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-    }
-
-    .btn-light {
-      color: #212529;
-      background-color: #f8f9fa;
-      border-color: #717171;
-    }
-
-    .about {
-      margin-inline: 10px;
-      margin-block: 10px;
-    }
   </style>
 </head>
 
 <body>
   <!-- Main Content -->
   <div class="container mt-4">
-    <h1 class="text-center pageheader">Bus Speed Test Live</h1>
-    <p class="text-center lead">Track the live speed of bus in real-time using Online GPS Speedometer.</p>
-
+    <h1 class="text-center pageheader">Findspeedof </h1>
+    <p class="text-center lead">Check Your Current Speed Instantly Using Online Speedometer</p>
     <div class="row justify-content-center">
       <div class="col-md-8" style="padding-top: 0rem;">
         <div class="container mt-2" style="padding-top: 1rem;">
@@ -219,17 +119,11 @@
                 <button type="button" onclick="toggleAdvancedMenu()" class="btn btn-info">More Option <i
                     class="bi bi-arrow-down-square-fill"></i></button>
               </div>
-
-
-              <!-------------------------Remove this section if this file throws error------------------->
-
               <div class="metadata d-none" id="readoutUnits">
-
                 <div class="measure"> <span id="maxsp">0</span>
                   <p class="metric">kmph</p>
                   <p class="metricunit">Max</p>
                 </div>
-
                 <div class="measure"> <span id="avrg">0</span>
                   <p class="metric">kmph </p>
                   <p class="metricunit">Average</p>
@@ -243,24 +137,21 @@
                   <p class="metricunit">Distance</p>
                 </div>
               </div>
-
-
               <!------------------------------------------------------------------------------------------>
-
             </form>
           </div>
-
-
           <p class="text-center text-danger" id="error"></p>
-
         </div>
-
       </div>
     </div>
 
-    <article class="about">Do You want to know how fast your bus is going? Use FindSpeedOf's online bus speedometer to measure the real-time travel speed of buses and other public transport accurately using GPS.
-
+    <article class="about">
+      FindSpeedOf is a free online GPS speedometer that shows your real-time speed in km/h directly in your browser.
+      It works on Android, iPhone, and desktop without installing any app.
+      Use it to track the live speed of a car, bike, bus, train, or while walking and running with high accuracy.
     </article>
+
+
     <!-- Features Section -->
 
     <section id="features" class="mt-5">
@@ -274,7 +165,8 @@
                   <i class="bi bi-speedometer2"></i>
                 </div>
                 <h3 class="h5">Real-Time Speed</h3>
-                <p>Travelling by bus and curious about its speed? FindSpeedOf's Bus Speed Test tool shows live speed instantly using accurate GPS data.</p>
+                <p>Check your current speed instantly with our online GPS speedometer. It shows accurate real-time speed
+                  directly in your browser.</p>
               </div>
             </div>
           </div>
@@ -285,8 +177,8 @@
                   <i class="bi bi-graph-up"></i>
                 </div>
                 <h3 class="h5">No App installation</h3>
-                <p>Check bus's current speed, average speed and maximum speed without installing any
-                app or creating an account.</p>
+                <p>Check your current speed, average speed, and maximum speed without downloading or installing any
+                  application or creating an account.</p>
               </div>
             </div>
           </div>
@@ -297,8 +189,7 @@
                   <i class="bi bi-battery-full"></i>
                 </div>
                 <h3 class="h5">Other Units</h3>
-                <p>View live bus speed in km/h, mph, or meters per second (m/s) with good GPS accuracy.
-                </p>
+                <p>View your speed in km/h, mph, or m/s with a single click.</p>
               </div>
             </div>
           </div>
@@ -310,40 +201,33 @@
     <section id="how-it-works" class="mt-5">
       <div class="card">
         <div class="card-body">
-          <h2 class="text-center mb-4">Bus Speed Test and working.</h2>
+          <h2 class="text-center mb-4">Online GPS Speedometer – Use Cases & How It Works</h2>
           <div class="row">
 
             <div class="col-md-6">
-              <article class="what-is-bus-train">
-                <h3>What is Bus Speed Tester?</h3>
-                <p>
-                  A Bus Speed Tester is an online GPS-based tool that allows passengers to measure the real-time traveling speed of a bus directly from their device.
-                </p>
-
-                <p>
-                  City buses typically operate at speeds ranging from <strong>20 km/h to 60 km/h</strong>, depending on
-                  traffic
-                  conditions, road quality, signals, and local regulations. Highway buses may reach higher speeds.
-                </p>
-
-                <p>
-                  This tool is useful for passengers who want to estimate travel speed during daily commuting or
-                  long-distance
-                  journeys. Speed accuracy may vary based on GPS signal strength and surroundings.
-                </p>
+              <article class="use-cases">
+                <h3>Use Cases</h3>
+                <ul>
+                  <li>Check live train speed in real time</li>
+                  <li>Measure car speed using GPS</li>
+                  <li>Track bike or motorcycle speed online</li>
+                  <li>Monitor cycle or running speed</li>
+                  <li>Check bus speed during travel</li>
+                  <li>Measure jogging and walking speed</li>
+                  <li>Track athlete speed in real time</li>
+                  <li>View average speed and distance travelled</li>
+                </ul>
               </article>
             </div>
-
             <div class="col-md-6">
-              <article class="how-to-use-bus-train-speedometer">
-                <h3>How to use Bus Speedometer?</h3>
-                <p>Measure your bus's speed online using your smartphone or tablet. You just have to follow these
-                  steps</p>
+              <article class="how-to-use">
+                <h3>How to use Online Speedometer?</h3>
+                <p>Use your phone or laptop to measure speed instantly with GPS. Just follow these steps:</p>
                 <ul>
-                  <li>Click Start Button.</li>
-                  <li>Allow Location Access.</li>
-                  <li>Speed Tracking Begins.</li>
-                  <li>You can choose between measurements units as per need.</li>
+                  <li>Tap the Start button</li>
+                  <li>Allow location (GPS) permission</li>
+                  <li>Real-time speed tracking will begin automatically</li>
+                  <li>Switch between km/h, mph, or m/s anytime</li>
                 </ul>
               </article>
             </div>
@@ -360,28 +244,29 @@
           <h3 class="accordion-header" id="headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              How does the speed test work?
+              How does an online GPS speedometer work?
             </button>
           </h3>
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Findspeedof uses your device's GPS sensor to calculate speed by measuring location changes over time. The
-              speed is updated live while the test is running.
-            </div>
+              It uses your device's built-in GPS to calculate speed based on distance covered over time. Once you allow
+              location access and start moving, your real-time speed is displayed instantly. </div>
           </div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Is Findspeedof free to use?
+              Can I use this speedometer for car, bike, or train travel?
             </button>
           </h3>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              Yes. The service is completely free and accessible on mobile phones, tablets, and desktop devices.
+              Yes, it works for cars, bikes, buses, trains, and even while running or cycling. Any movement detected by
+              GPS
+              will be measured and shown as current speed.
             </div>
           </div>
         </div>
@@ -389,20 +274,40 @@
           <h3 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Does Findspeedof track or store my location data?
+              Does this online speedometer work without installing an app?
             </button>
           </h3>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
             data-bs-parent="#faqAccordion">
             <div class="accordion-body">
-              No. Real-time GPS location is used only while you click “Start” to calculate speed. We do not store
-              continuous location history or personal identifiers.
+              Yes, it runs directly in your browser. You don’t need to download any app—just open the website, enable
+              GPS,
+              and tap the Start button.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Can I check my walking or running speed in real-time?
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, the speedometer also tracks walking, jogging, and running speed. It shows your live speed in km/h
+              along
+              with distance, average speed, and maximum speed.
             </div>
           </div>
         </div>
       </div>
     </section>
   </div>
+
+
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -419,7 +324,6 @@
             <li>
               <a href="https://findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
             </li>
-
           </ul>
         </div>
         <div class="col-md-3">
@@ -449,7 +353,8 @@
       <hr>
       <div class="row">
         <div class="col-md-12 text-center">
-          <p class="mb-0">© 2026 <b><a href="https://findspeedof.com/" class="text-white text-decoration-none">FindSpeedOf.com</a></b>. All rights reserved.</p>
+          <p class="mb-0">© 2026 <b><a href="https://findspeedof.com/"
+                class="text-white text-decoration-none">FindSpeedOf.com</a></b>. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -458,7 +363,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script>
+  <script>
     let watchID;
     let previousTimestamp;
     const MAX_SPEED_KMPH = 180;   // realistic cap
@@ -518,8 +423,8 @@
     }
 
     const fmtSpeed = v => Math.round(v);
-    const fmtAvg   = v => v < 5 ? v.toFixed(1) : Math.round(v);
-    const fmtDist  = m => {
+    const fmtAvg = v => v < 5 ? v.toFixed(1) : Math.round(v);
+    const fmtDist = m => {
       if (m < 10) return m.toFixed(1);
       else return Math.round(m)
     };
@@ -555,7 +460,7 @@
       else if (unit === "mph") displaySpeed = speedMS * 2.23694;
       else displaySpeed = speedMS;
       //document.getElementById("speed").innerText =displaySpeed.toFixed(1);
-      document.getElementById("speed").innerText =fmtSpeed(displaySpeed);
+      document.getElementById("speed").innerText = fmtSpeed(displaySpeed);
 
       // MAX SPEED
       if (displaySpeed > maxspeed) {
@@ -566,7 +471,7 @@
       const totalTime = (currentTimestamp - startTime) / 1000;
       if (totalTime > 0) {
         const avgSpeedMS = totalDistance / totalTime;
-        const avgSpeedKMPH = avgSpeedMS * 3.6   
+        const avgSpeedKMPH = avgSpeedMS * 3.6
         avg.innerText = avgSpeedKMPH.toFixed(1);
       }
       previousTimestamp = currentTimestamp;

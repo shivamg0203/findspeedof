@@ -557,15 +557,12 @@ world-class amenities for passengers across major intercity routes.</p>
         maxspeed = displaySpeed;
         ma.innerText = fmtAvg(maxspeed);
       }
-      // AVERAGE SPEED = total distance / total time
+     // AVERAGE SPEED = total distance / total time    /*const avgSpeed = unit === "kmph" ? avgSpeedMS * 3.6 : unit === "mph" ? avgSpeedMS * 2.23694 : avgSpeedMS;*/
       const totalTime = (currentTimestamp - startTime) / 1000;
       if (totalTime > 0) {
         const avgSpeedMS = totalDistance / totalTime;
-        const avgSpeed =
-          unit === "kmph" ? avgSpeedMS * 3.6 :
-            unit === "mph" ? avgSpeedMS * 2.23694 :
-              avgSpeedMS;
-        avg.innerText = avgSpeed.toFixed(1);
+        const avgSpeedKMPH = avgSpeedMS * 3.6   
+        avg.innerText = avgSpeedKMPH.toFixed(1);
       }
       previousTimestamp = currentTimestamp;
     }
