@@ -391,9 +391,11 @@
         tracking = true;
         //toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-stop-fill"></i> Stop`
+        document.querySelector('#strstpbtn').style.color = '#ff0000';
         startTracking();
       } else {
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-play-fill"></i> Start`;
+        document.querySelector('#strstpbtn').style.color = 'black';
         stopTracking();
         tracking = false;
       }

@@ -940,6 +940,16 @@
       previousTimestamp = currentTimestamp;
 
     }
+    
+    function startDotsAnimation(elementId, speed = 900) {
+      const el = document.getElementById(elementId);
+      let dots = 1;
+
+      setInterval(() => {
+        el.textContent = '.'.repeat(dots);
+        dots = dots === 3 ? 1 : dots + 1; // 1 → 2 → 3 → 1
+      }, speed);
+    }
 
 
 

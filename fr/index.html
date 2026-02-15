@@ -264,17 +264,14 @@
             <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
               data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
 
-              Puis-je vérifier la vitesse du véhicule sur mon iPhone ?
+              Quelle est la vitesse maximale que cet outil peut mesurer ?
 
             </button>
           </h3>
           <div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseTwo">
             <div class="accordion-body">
-
-              Oui, le compteur de vitesse en ligne de Findspeedof.com fonctionne parfaitement, même sur iPhone. Pour
-              connaître la vitesse de votre véhicule, il vous suffit de vous rendre sur findspeedof.com depuis votre
-              appareil et de cliquer sur le bouton « Démarrer ».
+            Le compteur peut mesurer des vitesses élevées, adaptées aux trains, voitures et vélos. Cependant, la précision dépend de la qualité du signal GPS de votre appareil.
 
             </div>
           </div>
@@ -284,7 +281,7 @@
             <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
               data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
 
-              Comment mesurer la vitesse de jogging ou de course d'une personne ?
+              Puis-je changer l’unité de mesure de la vitesse ?
 
             </button>
           </h3>
@@ -292,10 +289,7 @@
             id="collapseThree">
             <div class="accordion-body">
 
-              Vous pouvez facilement mesurer votre vitesse de jogging ou de course à pied en vous rendant sur
-              findspeedof.com, activez l'accès à la géolocalisation et cliquez sur « Démarrer ». Grâce à la technologie
-              GPS, votre vitesse en temps réel, votre vitesse moyenne, votre vitesse maximale et la distance parcourue
-              s'afficheront avec précision dès que vous commencerez à courir ou à jogger.
+              Oui, vous pouvez afficher la vitesse en kilomètres par heure (km/h), miles par heure (mph) ou mètres par seconde (m/s) selon vos préférences.
 
             </div>
           </div>
@@ -310,8 +304,7 @@
           <div aria-labelledby="headingFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseFour">
             <div class="accordion-body">
-              This usually happens when the GPS signal is low or blocked. Move to an open area, refresh the website
-              allow location access and click 'Start' button again
+              Cela se produit généralement lorsque le signal GPS est faible ou bloqué. Déplacez-vous dans un espace ouvert, actualisez le site Web, autorisez l'accès à la localisation et cliquez à nouveau sur le bouton 'Démarrer'.
             </div>
           </div>
         </div>
@@ -404,9 +397,11 @@
         tracking = true;
         //toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-stop-fill"></i> Stop`
+        document.querySelector('#strstpbtn').style.color = '#ff0000';
         startTracking();
       } else {
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-play-fill"></i> Start`;
+        document.querySelector('#strstpbtn').style.color = 'black';
         stopTracking();
         tracking = false;
       }
