@@ -215,9 +215,7 @@
               </div>
 
 
-              <!-------------------------Remove this section if this file throws error------------------->
-
-              <div class="metadata d-none" id="readoutUnits">
+                <div class="metadata d-none" id="readoutUnits">
 
                 <div class="measure"> <span id="maxsp">0</span>
                   <p class="metric">kmph</p>
@@ -237,16 +235,9 @@
                   <p class="metricunit">Distance</p>
                 </div>
               </div>
-
-
-              <!------------------------------------------------------------------------------------------>
-
             </form>
           </div>
-
-
           <p class="text-center text-danger" id="error"></p>
-
         </div>
 
       </div>
@@ -481,11 +472,9 @@ world-class amenities for passengers across major intercity routes.</p>
         tracking = true;
         //toggleaccuracy = accsele.value; //TO MAKE CLEAR IF HIGH ACCURACY IS SELECTED OR LOW ACCU.
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-stop-fill"></i> Stop`
-        document.querySelector('#strstpbtn').style.color = '#ff0000';
         startTracking();
       } else {
         document.querySelector('#strstpbtn').innerHTML = `<i class="bi bi-play-fill"></i> Start`;
-        document.querySelector('#strstpbtn').style.color = 'black';
         stopTracking();
         tracking = false;
       }
