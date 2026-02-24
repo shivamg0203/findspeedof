@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceleration Test – Findspeedof</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card {
+      background: #111827;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .speed {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .unit {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 120px;
+      margin: 10px;
+      padding: 10px;
+      background: #1f2937;
+      border-radius: 12px;
+    }
+
+    button {
+      background: #22c55e;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: black;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button.stop {
+      background: #ef4444;
+      color: white;
+    }
+
+    .badge {
+      margin-top: 10px;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+      background: #374151;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Acceleration Test</h1>
+
+  <div class="card">
+    <div class="speed" id="speed">0</div>
+    <div class="unit">km/h</div>
+
+    <div class="row">
+      <div class="box">
+        <div>Acceleration</div>
+        <div id="accValue">0.00 m/s²</div>
+      </div>
+
+      <div class="box">
+        <div>Max Acc</div>
+        <div id="maxAcc">0.00 m/s²</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="box">
+        <div>0–30 km/h</div>
+        <div id="timer30">--</div>
+      </div>
+
+      <div class="box">
+        <div>0–60 km/h</div>
+        <div id="timer60">--</div>
+      </div>
+    </div>
+
+    <div class="badge" id="motionBadge">Still</div>
+
+    <button id="startBtn">Start</button>
+  </div>
+
+<script>
+let watchId = null
+let lastSpeed = null
+let lastTime = null
+let maxAcceleration = 0
+
+let startTime30 = null
+let startTime60 = null
+let timer30Done = false
+let timer60Done = false
+
+let isRunning = false
+let isMoving = false
+
+const speedEl = document.getElementById("speed")
+const accEl = document.getElementById("accValue")
+const maxAccEl = document.getElementById("maxAcc")
+const timer30El = document.getElementById("timer30")
+const timer60El = document.getElementById("timer60")
+const motionBadge = document.getElementById("motionBadge")
+const startBtn = document.getElementById("startBtn")
+
+startBtn.onclick = () => {
+  if (!isRunning) startTracking()
+  else stopTracking()
+}
+
+function startTracking() {
+  if (!navigator.geolocation) {
+    alert("Geolocation not supported")
+    return
+  }
+
+  watchId = navigator.geolocation.watchPosition(updateData, console.error, {
+    enableHighAccuracy: true,
+    maximumAge: 0,
+    timeout: 5000
+  })
+
+  startBtn.textContent = "Stop"
+  startBtn.classList.add("stop")
+  isRunning = true
+}
+
+function stopTracking() {
+  navigator.geolocation.clearWatch(watchId)
+  watchId = null
+  isRunning = false
+  startBtn.textContent = "Start"
+  startBtn.classList.remove("stop")
+}
+
+function updateData(position) {
+  const speed = position.coords.speed
+  const now = Date.now()
+
+  if (speed == null) return
+
+  const speedKmh = speed * 3.6
+  speedEl.textContent = speedKmh.toFixed(1)
+
+  // Acceleration
+  if (lastSpeed !== null) {
+    const dt = (now - lastTime) / 1000
+    if (dt > 0) {
+      let acc = (speed - lastSpeed) / dt
+
+      if (Math.abs(acc) < 0.15) acc = 0
+
+      accEl.textContent = acc.toFixed(2) + " m/s²"
+
+      if (acc > maxAcceleration) {
+        maxAcceleration = acc
+        maxAccEl.textContent = maxAcceleration.toFixed(2) + " m/s²"
+      }
+    }
+  }
+
+  lastSpeed = speed
+  lastTime = now
+
+  // 0–30 timer
+  if (speedKmh < 2) {
+    startTime30 = now
+    timer30Done = false
+    timer30El.textContent = "--"
+  }
+
+  if (!timer30Done && speedKmh >= 30 && startTime30) {
+    timer30El.textContent = ((now - startTime30) / 1000).toFixed(2) + " s"
+    timer30Done = true
+  }
+
+  // 0–60 timer
+  if (speedKmh < 2) {
+    startTime60 = now
+    timer60Done = false
+    timer60El.textContent = "--"
+  }
+
+  if (!timer60Done && speedKmh >= 60 && startTime60) {
+    timer60El.textContent = ((now - startTime60) / 1000).toFixed(2) + " s"
+    timer60Done = true
+  }
+}
+
+// Motion detection (accelerometer)
+if (typeof DeviceMotionEvent !== "undefined") {
+  window.addEventListener("devicemotion", (event) => {
+    const acc = event.accelerationIncludingGravity
+
+    if (!acc) return
+
+    const magnitude = Math.sqrt(
+      acc.x * acc.x + acc.y * acc.y + acc.z * acc.z
+    )
+
+    // gravity ≈ 9.8 → motion if deviation > threshold
+    if (Math.abs(magnitude - 9.8) > 0.5) {
+      if (!isMoving) {
+        isMoving = true
+        document.getElementById("motionBadge").textContent = "Moving"
+      }
+    } else {
+      if (isMoving) {
+        isMoving = false
+        document.getElementById("motionBadge").textContent = "Still"
+      }
+    }
+  })
+}
+
+</script>
+
+</body>
+</html>
