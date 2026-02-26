@@ -95,15 +95,6 @@
     </div>
 
     <div class="row">
-      <div class="box">
-        <div>0–30 km/h</div>
-        <div id="timer30">--</div>
-      </div>
-
-      <div class="box">
-        <div>0–60 km/h</div>
-        <div id="timer60">--</div>
-      </div>
     </div>
 
     <div class="badge" id="motionBadge">Still</div>
@@ -116,20 +107,12 @@ let watchId = null
 let lastSpeed = null
 let lastTime = null
 let maxAcceleration = 0
-
-let startTime30 = null
-let startTime60 = null
-let timer30Done = false
-let timer60Done = false
-
 let isRunning = false
 let isMoving = false
 
 const speedEl = document.getElementById("speed")
 const accEl = document.getElementById("accValue")
 const maxAccEl = document.getElementById("maxAcc")
-const timer30El = document.getElementById("timer30")
-const timer60El = document.getElementById("timer60")
 const motionBadge = document.getElementById("motionBadge")
 const startBtn = document.getElementById("startBtn")
 
@@ -191,30 +174,6 @@ function updateData(position) {
 
   lastSpeed = speed
   lastTime = now
-
-  // 0–30 timer
-  if (speedKmh < 2) {
-    startTime30 = now
-    timer30Done = false
-    timer30El.textContent = "--"
-  }
-
-  if (!timer30Done && speedKmh >= 30 && startTime30) {
-    timer30El.textContent = ((now - startTime30) / 1000).toFixed(2) + " s"
-    timer30Done = true
-  }
-
-  // 0–60 timer
-  if (speedKmh < 2) {
-    startTime60 = now
-    timer60Done = false
-    timer60El.textContent = "--"
-  }
-
-  if (!timer60Done && speedKmh >= 60 && startTime60) {
-    timer60El.textContent = ((now - startTime60) / 1000).toFixed(2) + " s"
-    timer60Done = true
-  }
 }
 
 // Motion detection (accelerometer)

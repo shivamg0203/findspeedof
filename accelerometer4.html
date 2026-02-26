@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+<title>Acceleration Test – Findspeedof</title>
+  <meta name="description"
+    content="Check your real-time speed online using GPS in km/h. FindSpeedOf works on mobile and desktop without installing any app.">
+  <link rel="canonical" href="https://findspeedof.com/accelerometer">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="msapplication-TileImage" content="/images/touch/web-app-manifest-192x192.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Check Your Real-Time Speed Using GPS – Free Online Tool | FindSpeedOf" />
+  <meta property="og:description"
+    content="Check your real-time speed online using GPS. Works instantly on mobile and desktop with no app installation." />
+  <meta property="og:url" content="https://findspeedof.com/" />
+  <meta property="og:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+  <meta property="og:image:alt" content="FindSpeedOf – Real-Time GPS Speed Calculator" />
+  <meta property="og:site_name" content="FindSpeedOf" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Online Speedometer – Live Speed Test | FindSpeedOf" />
+  <meta name="twitter:url" content="https://findspeedof.com/" />
+  <meta name="twitter:description"
+    content="Instantly check how fast you're moving in a vehicle live with FindSpeedOf's GPS speedometer. No app, no signup—just open and start." />
+  <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVPRT0GLGT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XVPRT0GLGT');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://findspeedof.com/#software",
+  "name": "FindSpeedOf – Online GPS Speedometer",
+  "description": "FindSpeedOf is a free online GPS speedometer that measures real-time speed in km/h, mph, and m/s directly in your browser without installing any app.",
+  "url": "https://findspeedof.com/",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "inLanguage": "en",
+  "keywords": "online speedometer, GPS speed test, real-time speed, vehicle speed calculator",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FindSpeedOf",
+    "url": "https://findspeedof.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://findspeedof.com/assets/images/findspeedof.png",
+      "width": 512,
+      "height": 512
+    }
+  }
+}
+</script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel=stylesheet href="assets/style.css">
+  <style>
+    .speed-display {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .card {
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+
+    .speed {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .unit {
+      font-size: 18px;
+      color: #9ca3af;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 120px;
+      margin: 10px;
+      padding: 10px;
+      background: #8fc3ff;
+      border-radius: 12px;
+    }
+
+    button {
+      background: #22c55e;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: black;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button.stop {
+      background: #ef4444;
+      color: white;
+    }
+
+    .badge {
+      margin-top: 10px;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+      background: #374151;
+    }
+    #speed{
+      font-size: 3rem;
+    }
+    .speedinfo{
+      align-items: center;
+    justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h1 class="text-center pageheader">Findspeedof </h1>
+    <p class="text-center lead">Track your real-time Acceleration.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8" style="padding-top: 0rem;">
+        <div class="container mt-2" style="padding-top: 1rem;">
+          <p class="text-center" style="padding-top: 0rem;display: grid;">
+              <div class="card">
+    <div class="container d-flex speedinfo"><div class="speed" id="speed">0</div>
+    <div class="unit">km/h</div></div>
+
+    <div class="row">
+      <div class="box">
+        <div><b>Acceleration</b></div>
+        <div id="accValue"><b>0.00 m/s²</b></div>
+      </div>
+
+      <div class="box">
+        <div>Max Acc</div>
+        <div id="maxAcc">0.00 m/s²</div>
+      </div>
+    </div>
+
+    <div class="row">
+    </div>
+
+    <div class="badge" id="motionBadge">Still</div>
+
+    <button id="startBtn">Start</button>
+  </div>
+          <p class="text-center text-danger" id="error"></p>
+        </div>
+      </div>
+    </div>
+
+    <article class="about">Findspeedof.com is a free online speedometer that measures
+      real-time speed of any
+      moving object or vehicle. You can use it to check the live speed of a train, car, bike, bus, or even a running
+      athlete directly in your browser, without installing any app. It's a GPS based
+      speedometer.</article>
+    <!-- Features Section -->
+
+    <section id="features" class="mt-5">
+      <article class="key-features">
+        <h3 class="text-center mb-4" style="font-size: 2.4rem;">Key Features</h3>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-speedometer2"></i>
+                </div>
+                <h3 class="h5">Real-Time Speed</h3>
+                <p>Do you want to know the speed at which you are travelling or moving right now? Find it instantly
+                  using GPS.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <h3 class="h5">No App installation</h3>
+                <p>Check your current speed, average speed, and maximum speed without downloading or installing any
+                  application or creating an account.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="feature-icon">
+                  <i class="bi bi-battery-full"></i>
+                </div>
+                <h3 class="h5">Other Units</h3>
+                <p>Select the preferred speed unit amongst km/h, mph, and meters per second(m/s).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Online speedometer use cases and working.</h2>
+          <div class="row">
+
+            <div class="col-md-6">
+              <article class="use-cases">
+                <h3>Use Cases</h3>
+                <ul>
+                  <li>Measure speed of train online or live train speed test</li>
+                  <li>Measure speed of car online or live car speed test</li>
+                  <li>Measure speed of bike online or live bike speed test</li>
+                  <li>Measure speed of cycle online or live cycle speed test</li>
+                  <li>Check speed of bus online or live bus speed test</li>
+                  <li>Check speed of running or live jogging speed test</li>
+                  <li>Track speed of athlete or live athlete speed test</li>
+                  <li>Check average speed online and distance travelled</li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="how-to-use">
+                <h3>How to use GPS Speedometer?</h3>
+                <p>Measure your speed online using your smartphone or tablet. You just have to follow these steps</p>
+                <ul>
+                  <li>Click Start Button.</li>
+                  <li>Allow GPS permission.</li>
+                  <li>Speed Tracking instantly begins.</li>
+                  <li>You can choose between measurements units as per need.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mt-5">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              How accurate is the GPS speed calculator?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The accuracy depends on your device's GPS capabilities and environmental factors. Typically, modern
+              smartphones can measure speed with an accuracy of ±0.5-2 km/h in good conditions. </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Can I check vehicle speed on Iphone?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, the online Speedometer at Findspeedof.com works perfectly even on Iphone. To find your vehicle speed
+              all you have to do is visit findspeedof.com on your device and then just click the start button.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              How to measure jogging or running speed of a person?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can easily measure your jogging or running speed by visiting findspeedof.com, enabling location
+              access, and tapping the Start button. Once you begin moving, your real-time speed, average speed,
+              maximum speed, and exact distance traveled are displayed using GPS technology.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Why is my speed showing as 0 km/h when I'm moving?
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              This usually happens when the GPS signal is low or blocked. Move to an open area, refresh the website,
+              allow location access and click 'Start' button again.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Other Important Tools</h3>
+          <ul class="other-important-link">
+            <li>
+              <a href="https://findspeedof.com/vande-bharat-train-speed-test">Vande Bharat Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://findspeedof.com/bullet-train-speed-test">Bullet Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://findspeedof.com/about-us">About</a></li>
+            <li><a href="https://findspeedof.com/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://findspeedof.com/contact-us">Contact Us</a></li>
+            <li><a href="https://findspeedof.com/terms-and-conditions">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Share</h3>
+          <ul class="list-unstyled">
+            <li><a
+                href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://findspeedof.com"
+                target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://findspeedof.com" target="_blank"
+                rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A"
+                onclick="this.href='https://api.whatsapp.com/send?text=Check out this free online speedometer: %0A%0A' + encodeURIComponent(window.location.href);"
+                target="_blank" class="bi">
+                <i class="bi bi-instagram"></i> Whatsapp</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2026 <b><a href="https://findspeedof.com/"
+                class="text-white text-decoration-none">FindSpeedOf.com</a></b>. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    let watchId = null
+let lastSpeed = null
+let lastTime = null
+let maxAcceleration = 0
+let isRunning = false
+let isMoving = false
+
+const speedEl = document.getElementById("speed")
+const accEl = document.getElementById("accValue")
+const maxAccEl = document.getElementById("maxAcc")
+const motionBadge = document.getElementById("motionBadge")
+const startBtn = document.getElementById("startBtn")
+
+startBtn.onclick = () => {
+  if (!isRunning) startTracking()
+  else stopTracking()
+}
+
+function startTracking() {
+  if (!navigator.geolocation) {
+    alert("Geolocation not supported")
+    return
+  }
+
+  watchId = navigator.geolocation.watchPosition(updateData, console.error, {
+    enableHighAccuracy: true,
+    maximumAge: 0,
+    timeout: 5000
+  })
+
+  startBtn.textContent = "Stop"
+  startBtn.classList.add("stop")
+  isRunning = true
+}
+
+function stopTracking() {
+  navigator.geolocation.clearWatch(watchId)
+  watchId = null
+  isRunning = false
+  startBtn.textContent = "Start"
+  startBtn.classList.remove("stop")
+}
+
+function updateData(position) {
+  const speed = position.coords.speed
+  const now = Date.now()
+
+  if (speed == null) return
+
+  const speedKmh = speed * 3.6
+  speedEl.textContent = speedKmh.toFixed(1)
+
+  // Acceleration
+  if (lastSpeed !== null) {
+    const dt = (now - lastTime) / 1000
+    if (dt > 0) {
+      let acc = (speed - lastSpeed) / dt
+
+      if (Math.abs(acc) < 0.15) acc = 0
+
+      accEl.textContent = acc.toFixed(2) + " m/s²"
+
+      if (acc > maxAcceleration) {
+        maxAcceleration = acc
+        maxAccEl.textContent = maxAcceleration.toFixed(2) + " m/s²"
+      }
+    }
+  }
+
+  lastSpeed = speed
+  lastTime = now
+}
+
+// Motion detection (accelerometer)
+if (typeof DeviceMotionEvent !== "undefined") {
+  window.addEventListener("devicemotion", (event) => {
+    const acc = event.accelerationIncludingGravity
+
+    if (!acc) return
+
+    const magnitude = Math.sqrt(
+      acc.x * acc.x + acc.y * acc.y + acc.z * acc.z
+    )
+
+    // gravity ≈ 9.8 → motion if deviation > threshold
+    if (Math.abs(magnitude - 9.8) > 0.5) {
+      if (!isMoving) {
+        isMoving = true
+        document.getElementById("motionBadge").textContent = "Moving"
+      }
+    } else {
+      if (isMoving) {
+        isMoving = false
+        document.getElementById("motionBadge").textContent = "Still"
+      }
+    }
+  })
+}
+
+
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("error").innerText =
+            "User denied the request for Geolocation. Please enable location services to use this tool.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("error").innerText =
+            "Location information is unavailable. Please check your GPS signal.";
+          break;
+        case error.TIMEOUT:
+          document.getElementById("error").innerText =
+            "The request to get user location timed out. Please try again.";
+          break;
+        case error.UNKNOWN_ERROR:
+          document.getElementById("error").innerText =
+            "An unknown error occurred. Please refresh the page and try again.";
+          break;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!navigator.geolocation) {
+        document.getElementById('error').innerText =
+          "Your browser doesn't support geolocation, which is required for this tool. " +
+          "Please try a modern browser.";
+      }
+    });
+  </script>
+</body>
+
+</html>
