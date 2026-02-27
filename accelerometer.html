@@ -2,226 +2,483 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Accelerometer Speed Test – Motion Based Speed Calculator | FindSpeedOf</title>
-    <meta name="description"
-        content="Measure speed using your phone accelerometer. This motion-based speed test calculates speed from acceleration changes over time without GPS.">
-    <link rel="canonical" href="https://findspeedof.com/accelerometer-speed-test">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+  <title>Accelerometer Online - Live Acceleration Test | Findspeedof</title>
+  <meta name="description"
+    content="Measure real-time acceleration using your device's accelerometer in m/s². Perfect for testing motion while walking, running, cycling, or in a vehicle. Instant, accurate, and no app needed.">
+  <link rel="canonical" href="https://findspeedof.com/accelerometer">
+  <link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="msapplication-TileImage" content="/images/touch/web-app-manifest-192x192.png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Live Accelerometer Test Online – Measure Real-Time Acceleration | FindSpeedOf" />
+  <meta property="og:description"
+    content="Test your device's real-time acceleration in m/s² using the built-in accelerometer. Works instantly on mobile while walking, running, cycling, or in a vehicle. No app required." />
+  <meta property="og:url" content="https://findspeedof.com/accelerometer" />
+  <meta property="og:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+  <meta property="og:image:alt" content="FindSpeedOf live accelerometer test showing real-time acceleration in m/s²" />
+  <meta property="og:site_name" content="FindSpeedOf" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://findspeedof.com/accelerometer" />
+  <meta name="twitter:title" content="Online Accelerometer Test – Live Acceleration in m/s² | FindSpeedOf" />
+  <meta name="twitter:description"
+    content="Measure real-time acceleration using your device sensors. Test motion in a car, train, or while running—free, instant, and no app required." />
+  <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVPRT0GLGT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XVPRT0GLGT');
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://findspeedof.com/accelerometer#software",
+  "name": "FindSpeedOf – Online Accelerometer",
+  "description": "Free online accelerometer to measure real-time acceleration in m/s² using your device sensors. Test motion in cars, trains, cycling, or running directly in your browser without installing any app.",
+  "url": "https://findspeedof.com/accelerometer",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "inLanguage": "en",
+  "keywords": "online accelerometer, real-time acceleration test, acceleration in m/s2, motion sensor test, phone accelerometer tool",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "FindSpeedOf",
+    "url": "https://findspeedof.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://findspeedof.com/assets/images/findspeedof.png",
+      "width": 512,
+      "height": 512
+    }
+  }
+}
+</script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel=stylesheet href="assets/style.css">
-    <style>
-        .speed-value {
-            font-size: 5rem;
-            font-weight: 700;
-            line-height: 1;
-        }
+  <style>
+    .card {
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
 
-        .unit {
-            font-size: 1.2rem;
-            color: #666;
-        }
+    .unit {
+      font-size: 18px;
+      color: #9ca3af;
+    }
 
-        .measure-box {
-            text-align: center;
-        }
-    </style>
+    .rowm15 {
+      margin-top: 15px;
+    }
+
+    .box {
+      flex: 1;
+      min-width: 120px;
+      margin: 10px;
+      padding: 10px;
+      background: #8fc3ff;
+      border-radius: 12px;
+    }
+
+    button#startBtn {
+      background: #22c55e;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      color: black;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button.stop#startBtn {
+      background: #ef4444;
+      color: white;
+    }
+
+    .badge {
+      margin-top: 10px;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 20px;
+      background: #374151;
+    }
+
+    #speed {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .speedinfo {
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container mt-4">
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h1 class="text-center pageheader">Findspeedof</h1>
+    <p class="text-center lead">Track your real-time Acceleration in m/s².</p>
 
-        <!-- HEADER -->
-        <h1 class="text-center">Accelerometer Speed Test</h1>
-        <p class="text-center lead">
-            Measure motion-based speed using your device accelerometer without GPS.
-        </p>
-
-        <!-- SPEED DISPLAY -->
-        <div class="text-center my-4">
-            <div class="speed-value" id="speed">0</div>
-            <div class="unit" id="spdunit">km/h</div>
-        </div>
-
-        <!-- UNIT BUTTONS -->
-        <div class="text-center mb-3">
-            <button class="btn btn-light kmph" onclick="speedunitfunc('kmph')" disabled>Km/h</button>
-            <button class="btn btn-light meters" onclick="speedunitfunc('meters')">m/s</button>
-            <button class="btn btn-light mph" onclick="speedunitfunc('mph')">mph</button>
-        </div>
-
-        <!-- CONTROL BUTTONS -->
-        <div class="text-center mb-4">
-            <button id="strstpbtn" class="btn btn-info" onclick="starter()">
-                <i class="bi bi-play-fill"></i> Start
-            </button>
-            <button class="btn btn-secondary" onclick="restart()">Reset</button>
-        </div>
-
-        <!-- STATS
-        <div class="row text-center mb-4">
-            <div class="col-6 col-md-3 measure-box">
-                <div id="maxsp">0</div>
-                <small>Max</small>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="container mt-2" style="padding-top: 1rem;">
+          <div class="card">
+            <div class="container d-flex speedinfo">
+              <div class="speed" id="speed">0</div>
+              <div class="unit">km/h</div>
             </div>
-            <div class="col-6 col-md-3 measure-box">
-                <div id="avrg">0</div>
-                <small>Average</small>
-            </div>a
-        </div> -->
 
-        <p class="text-danger text-center" id="error"></p>
+            <div class="row rowm15">
+              <div class="box">
+                <div><b>Acceleration</b></div>
+                <div id="accValue"><b>0.00 m/s²</b></div>
+              </div>
 
-        <!-- ABOUT -->
-        <article class="mt-4 text-center">
-            This tool estimates speed by integrating acceleration data from your device motion sensors.
-            It works best for short movements and motion experiments.
-        </article>
-
+              <div class="box">
+                <div>Max Acc</div>
+                <div id="maxAcc">0.00 m/s²</div>
+              </div>
+            </div>
+            <div class="row rowm15">
+            </div>
+            <div class="badge" id="motionBadge">Still</div>
+            <button id="startBtn">Start</button>
+          </div>
+          <p class="text-center text-danger" id="error"></p>
+        </div>
+      </div>
     </div>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    <article class="about">
+      Findspeedof.com offers a free online accelerometer that measures your real-time acceleration
+      and motion directly in your browser.
+      It uses your device sensors to detect movement while walking, running, travelling in a car,
+      bike, bus, or train. You can instantly see acceleration values in m/s² without installing any
+      app. This live accelerometer tool works on mobile and desktop and is useful for testing motion,
+      vehicle pickup, and movement patterns.
+    </article>
+    <section class="container mt-4">
+  <h2 class="text-center mb-3">What is an Online Accelerometer?</h2>
+  <p>
+    An <strong>online accelerometer</strong> is a browser-based tool that uses your phone's motion sensors to
+    measure real-time acceleration in <strong>m/s²</strong>. With this <strong>phone accelerometer test</strong>,
+    you can instantly check how quickly your device speeds up, slows down, or changes direction without installing
+    any app.
+  </p>
+  <p>
+    <strong>Acceleration is the rate of change of speed over time.</strong> For example, when a car goes from
+    0 to 20 km/h, your phone detects that increase in velocity and calculates the acceleration in meters per
+    second squared. This <strong>acceleration test (m/s²)</strong> helps you analyze vehicle pickup, braking force,
+    running motion, or sudden stops.
+  </p>
+  <p>
+    You can <strong>measure acceleration online</strong> by simply tapping the Start button and allowing motion
+    access. The tool works in real time and shows positive acceleration when you speed up and negative values
+    when you brake or slow down.
+  </p>
+</section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="mt-5">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="text-center mb-4">Online accelerometer use cases and how it works</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <article class="use-cases">
+                <h3>Why do you need Online Accelerometer?</h3>
+                <ul>
+                  <li>Test phone motion sensor and accelerometer accuracy</li>
+                  <li>Measure acceleration while walking or running</li>
+                  <li>Check vehicle pickup in car, bike, bus, or train</li>
+                  <li>Detect sudden braking and movement changes</li>
+                  <li>Monitor motion patterns during travel</li>
+                  <li>Track real-time acceleration in m/s²</li>
+                  <li>Analyze start and stop motion response</li>
+                  <li>Use as a basic motion and vibration detector</li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="how-to-use">
+                <h3>How to use the online accelerometer?</h3>
+                <p>Measure real-time acceleration using your smartphone sensors and GPS by following these steps:</p>
+                <ul>
+                  <li>Tap the Start button.</li>
+                  <li>Allow motion sensor permission if prompted.</li>
+                  <li>Move your device to see live acceleration values.</li>
+                  <li>View readings in m/s².</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="mt-5">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              How accurate is this phone accelerometer test?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The accuracy depends on your phone's motion sensors. Most modern smartphones provide reliable real-time
+              acceleration data, but readings may vary slightly due to device hardware, orientation, and vibrations.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Can I measure vehicle acceleration with this tool?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes. You can monitor pickup, braking, and motion changes in cars, bikes, buses, and trains in real time
+              using your phone's accelerometer sensor.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Why do acceleration values change even when I am not moving?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Small fluctuations are normal because the sensor detects gravity, hand movement, and tiny vibrations.
+              Keeping the phone stable will give more consistent readings.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Do I need internet to use the accelerometer?
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Internet is only required to open the page. Once loaded, acceleration is measured using your device's
+              motion sensor.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Other Important Tools</h3>
+          <ul class="other-important-link">
+            <li>
+              <a href="https://findspeedof.com/vande-bharat-train-speed-test">Vande Bharat Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://findspeedof.com/bullet-train-speed-test">Bullet Train Speed Test</a>
+            </li>
+            <li>
+              <a href="https://findspeedof.com/metro-train-speed-test">Metro Train Speed Test</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://findspeedof.com/about-us">About</a></li>
+            <li><a href="https://findspeedof.com/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://findspeedof.com/contact-us">Contact Us</a></li>
+            <li><a href="https://findspeedof.com/terms-and-conditions">Terms and Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3>Share</h3>
+          <ul class="list-unstyled">
+            <li><a
+                href="https://twitter.com/intent/tweet?text=Check%20this%20GPS%20Speed%20Calculator!%20https://findspeedof.com"
+                target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter"></i> Twitter</a></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://findspeedof.com" target="_blank"
+                rel="noopener noreferrer"><i class="bi bi-facebook"></i> Facebook</a></li>
+            <li><a href="https://api.whatsapp.com/send?text=Check out this free online accelerometer: %0A%0A"
+                onclick="this.href='https://api.whatsapp.com/send?text=Check out this free online accelerometer: %0A%0A' + encodeURIComponent(window.location.href);"
+                target="_blank" class="bi">
+                <i class="bi bi-instagram"></i> Whatsapp</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0">© 2026 <b><a href="https://findspeedof.com/"
+                class="text-white text-decoration-none">FindSpeedOf.com</a></b>. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script>
+    let watchId = null
+    let lastSpeed = null
+    let lastTime = null
+    let maxAcceleration = 0
+    let isRunning = false
+    let isMoving = false
 
-    <script>
-        let tracking = false;
-        let velocity = 0;
-        let lastTime = null;
-        let maxspeed = 0;
-        let totalTime = 0;
-        let avgSpeed = 0;
-        let unit = "kmph";
+    const speedEl = document.getElementById("speed")
+    const accEl = document.getElementById("accValue")
+    const maxAccEl = document.getElementById("maxAcc")
+    const motionBadge = document.getElementById("motionBadge")
+    const startBtn = document.getElementById("startBtn")
 
-        const avgEl = document.getElementById("avrg");
-        const maxEl = document.getElementById("maxsp");
+    startBtn.onclick = () => {
+      if (!isRunning) startTracking()
+      else stopTracking()
+    }
 
-        function restart() {
-            stopTracking();
-            velocity = 0;
-            maxspeed = 0;
-            totalTime = 0;
-            avgSpeed = 0;
-            document.getElementById("speed").innerText = "0";
-            avgEl.innerText = "0";
-            maxEl.innerText = "0";
+    function startTracking() {
+      if (typeof DeviceMotionEvent !== "undefined" &&
+        typeof DeviceMotionEvent.requestPermission === "function") {
+        DeviceMotionEvent.requestPermission().catch(() => {});
+      }
+      if (!navigator.geolocation) {
+        alert("Geolocation not supported")
+        return
+      }
+      
+      watchId = navigator.geolocation.watchPosition(updateData, console.error, {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+        timeout: 5000
+      })
+
+      startBtn.textContent = "Stop"
+      startBtn.classList.add("stop")
+      isRunning = true
+    }
+
+    function stopTracking() {
+      navigator.geolocation.clearWatch(watchId)
+      watchId = null
+      isRunning = false
+      startBtn.textContent = "Start"
+      startBtn.classList.remove("stop")
+      speedEl.textContent = 0
+      accEl.textContent = '0.00 m/s²'
+
+    }
+
+    function updateData(position) {
+      const speed = position.coords.speed
+      const now = Date.now()
+      if (speed == null) return
+      const speedKmh = speed * 3.6
+      speedEl.textContent = speedKmh.toFixed(0)
+      // Acceleration
+      if (lastSpeed !== null) {
+        const dt = (now - lastTime) / 1000
+        if (dt > 0) {
+          let acc = (speed - lastSpeed) / dt
+          if (Math.abs(acc) < 0.15) acc = 0
+          accEl.textContent = acc.toFixed(2) + " m/s²"
+          if (acc > maxAcceleration) {
+            maxAcceleration = acc
+            maxAccEl.textContent = maxAcceleration.toFixed(2) + " m/s²"
+          }
         }
+      }
+      lastSpeed = speed
+      lastTime = now
+    }
 
-        function starter() {
-            if (!tracking) {
-                tracking = true;
-                document.getElementById("strstpbtn").innerHTML =
-                    `<i class="bi bi-stop-fill"></i> Stop`;
-                startTracking();
-            } else {
-                tracking = false;
-                document.getElementById("strstpbtn").innerHTML =
-                    `<i class="bi bi-play-fill"></i> Start`;
-                stopTracking();
-            }
+    // Motion detection (accelerometer)
+    if (typeof DeviceMotionEvent !== "undefined") {
+      window.addEventListener("devicemotion", (event) => {
+        const acc = event.accelerationIncludingGravity
+        if (!acc) return
+        const magnitude = Math.sqrt(
+          acc.x * acc.x + acc.y * acc.y + acc.z * acc.z
+        )
+        // gravity ≈ 9.8 → motion if deviation > threshold
+        if (Math.abs(magnitude - 9.8) > 0.5) {
+          if (!isMoving) {
+            isMoving = true
+            document.getElementById("motionBadge").textContent = "Moving"
+          }
+        } else {
+          if (isMoving) {
+            isMoving = false
+            document.getElementById("motionBadge").textContent = "Still"
+          }
         }
+      })
+    }
 
-        function speedunitfunc(v) {
-            unit = v;
-            const units = ['meters', 'mph', 'kmph'];
 
-            for (let u of units) {
-                document.getElementsByClassName(u)[0].disabled = (u === v);
-            }
-
-            document.getElementById("spdunit").innerText =
-                v === "meters" ? "m/s" : v;
-        }
-
-        function convertSpeed(ms) {
-            if (unit === "kmph") return ms * 3.6;
-            if (unit === "mph") return ms * 2.23694;
-            return ms;
-        }
-
-        function handleMotion(event) {
-            if (!tracking) return;
-
-            const acc = event.accelerationIncludingGravity;
-            if (!acc) return;
-
-            const now = Date.now();
-            if (!lastTime) {
-                lastTime = now;
-                return;
-            }
-
-            const dt = (now - lastTime) / 1000;
-            lastTime = now;
-
-            const a = Math.sqrt(acc.x * acc.x + acc.y * acc.y + acc.z * acc.z);
-
-            const netAcc = Math.abs(a - 9.8);
-
-            velocity += netAcc * dt;
-
-            if (velocity < 0) velocity = 0;
-
-            totalTime += dt;
-
-            let displaySpeed = convertSpeed(velocity);
-            document.getElementById("speed").innerText = Math.round(displaySpeed);
-
-            if (displaySpeed > maxspeed) {
-                maxspeed = displaySpeed;
-                maxEl.innerText = Math.round(maxspeed);
-            }
-
-            if (totalTime > 0) {
-                avgSpeed =
-                    ((avgSpeed * (totalTime - dt)) + displaySpeed * dt) / totalTime;
-
-                avgEl.innerText =
-                    avgSpeed < 5 ? avgSpeed.toFixed(1) : Math.round(avgSpeed);
-            }
-        }
-
-        function startTracking() {
-            if (typeof DeviceMotionEvent !== "undefined") {
-
-                if (typeof DeviceMotionEvent.requestPermission === "function") {
-                    DeviceMotionEvent.requestPermission()
-                        .then(response => {
-                            if (response === "granted") {
-                                window.addEventListener("devicemotion", handleMotion);
-                            } else {
-                                showError("Motion permission denied.");
-                            }
-                        })
-                        .catch(() => showError("Motion permission error."));
-                } else {
-                    window.addEventListener("devicemotion", handleMotion);
-                }
-
-            } else {
-                showError("Accelerometer not supported on this device.");
-            }
-        }
-
-        function stopTracking() {
-            window.removeEventListener("devicemotion", handleMotion);
-            lastTime = null;
-        }
-
-        function showError(msg) {
-            document.getElementById("error").innerText = msg;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            if (!("DeviceMotionEvent" in window)) {
-                showError("Your device does not support motion sensors.");
-            }
-        });
-    </script>
-
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("error").innerText =
+            "User denied the request for Geolocation. Please enable location services to use this tool.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("error").innerText =
+            "Location information is unavailable. Please check your GPS signal.";
+          break;
+        case error.TIMEOUT:
+          document.getElementById("error").innerText =
+            "The request to get user location timed out. Please try again.";
+          break;
+        case error.UNKNOWN_ERROR:
+          document.getElementById("error").innerText =
+            "An unknown error occurred. Please refresh the page and try again.";
+          break;
+      }
+    }
+    
+  </script>
 </body>
 
 </html>
