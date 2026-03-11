@@ -32,6 +32,8 @@
   <meta name="twitter:description"
     content="Kostenloser GPS-Speedtest zur Messung deiner Geschwindigkeit in Echtzeit." />
   <meta name="twitter:image" content="https://findspeedof.com/assets/images/findspeedof.png" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0d6efd">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XVPRT0GLGT"></script>
   <script>
@@ -196,7 +198,7 @@
   <div class="container mt-4">
     <h1 class="text-center pageheader">Findspeedof</h1>
     <p class="text-center lead">
-      Verfolgen Sie Ihre Geschwindigkeit und Bewegungsdaten in Echtzeit mit einem online GPS-Tachometer.
+      Kostenloser Online GPS-Tachometer für präzise Echtzeit-Geschwindigkeit
     </p>
     <div class="row justify-content-center">
       <div class="col-md-8" style="padding-top: 0rem">
@@ -524,6 +526,13 @@ km/h, mph oder Meter pro Sekunde (m/s).
   </footer>
   <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js");
+      });
+    }
+    </script>
     <script>
     let watchID;
     let previousTimestamp;
