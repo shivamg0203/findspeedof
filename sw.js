@@ -16,18 +16,25 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
+
   if (event.request.method !== "GET") return;
+
+  // ignore chrome-extension and other unsupported schemes
+  if (!event.request.url.startsWith("http")) return;
 
   event.respondWith(
     caches.open(CACHE).then(cache =>
       cache.match(event.request).then(response => {
         const fetchPromise = fetch(event.request).then(networkResponse => {
-          cache.put(event.request, networkResponse.clone());
+          // only cache valid responses
+          if (networkResponse && networkResponse.status === 200) {
+            cache.put(event.request, networkResponse.clone());
+          }
           return networkResponse;
-        });
-
+        }).catch(() => response);
         return response || fetchPromise;
       })
     )
   );
+
 });
