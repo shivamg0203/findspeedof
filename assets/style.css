@@ -7,12 +7,6 @@
       margin-bottom: 5px !important;
       color: #757575 !important;
     }
-   .card {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      margin-bottom: 20px;
-      border: none;
-    }
         /*CSS EDIT*/
     #speed {
       color: black;
@@ -101,9 +95,7 @@
       list-style-type: none;
       padding-left: 0;
     }
-    .other-important-link a{
-      /* text-decoration: none!important; */
-    }
+
     .btn-light {
       color: #212529;
       background-color: #f8f9fa;
