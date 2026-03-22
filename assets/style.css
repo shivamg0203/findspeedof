@@ -87,9 +87,6 @@
         a {
       color: white!important;
     }
-    .list-unstyled a{
-      /* text-decoration: none; */
-    }
 
     .other-important-link{
       list-style-type: none;

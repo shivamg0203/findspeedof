@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,149 +62,36 @@
   }
 }
 </script>
-
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel=stylesheet href="assets/style.css">
   <style>
-    .pageheader {
-      background: dodgerblue;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    /*CSS EDIT*/
-    #speed {
-      color: black;
-      font-size: 8rem;
-      font-weight: bold;
-    }
-
-    #accuracy {
-      color: #4b708c;
-      font-size: 1.5rem;
-    }
-
-    #avrg {
-      color: #2c7be5;
-      font-size: 1.5rem;
-    }
-
-    #distance {
-      color: #3a5a6f;
-      font-size: 1.5rem;
-    }
-
-    #maxsp {
-      color: green;
-      font-size: 1.5rem;
-    }
-
-    .card {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-      margin-bottom: 20px;
-      border: none;
-    }
-
-    .other-important-link {
-      list-style-type: none;
-    }
-
-    .card-body {
-      padding: 1.5rem;
-    }
-
-    .btn-primary {
-      background-color: #4b708c;
-      border-color: #4b708c;
-    }
-
-    .btn-primary:hover {
-      background-color: #3a5a6f;
-      border-color: #3a5a6f;
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #4b708c;
-    }
-
-    footer {
-      background-color: #4b708c;
-      color: white;
-      padding: 2rem 0;
-      margin-top: 3rem;
-    }
-
-    .speed-display {
-      background-color: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-
-    .lead {
-      font-size: 1.25rem !important;
-      font-weight: 400;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-      font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
-    }
-
-    .btn-light {
-      color: #212529;
-      background-color: #f8f9fa;
-      border-color: #717171;
-    }
-
     .about {
       justify-content: center;
       display: flex;
       margin-inline: 10px;
       margin-block: 10px;
     }
-
-    .other-links{
-      color:#007bff!important
-    }
   </style>
 </head>
-
 <body>
   <!-- Main Content -->
   <div class="container mt-4">
     <h1 class="text-center pageheader">Vande Bharat Train Speed Test </h1>
     <p class="text-center lead">Check how fast Vande Bharat Train runs using Online Speedometer.</p>
-
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="container mt-2" style="padding-top: 1rem;">
-          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed">0</span><span
-              id="spdunit">km/h</span></p>
-
+          <p class="text-center" style="padding-top: 0rem;display: grid;"><span id="speed">0</span><span id="spdunit">km/h</span></p>
           <div class="justify-content-center d-flex" style="padding-top:1rem;padding-bottom:1rem;">
             <div class="mb-3">
-              <!-- <option value="unknown" >Select Accuracy Level</option> -->
               <button type="button" onclick="speedunitfunc('kmph')" class="btn btn-light kmph" disabled>Km/hr</button>
               <button type="button" onclick="speedunitfunc('meters')" class="btn btn-light meters">Meter/sec</button>
               <button type="button" onclick="speedunitfunc('mph')" class="btn btn-light mph">Miles/hr</button>
-
             </div>
           </div>
-
           <div class="justify-content-center d-flex">
             <form action="" method="get">
-              <!-- <select id="accselector" class="form-select" aria-label="Default select example">
-          <option value="unknown" selected="">Change Accuracy</option>
-          <option value="true">High</option>
-          <option value="false">Low</option>
-        </select> -->
-              <!-- <button type="button" onclick="manageAccuracy()" class="btn btn-info">
-            Accuracy
-          </button> -->
               <div style="display: flex;justify-content: space-evenly;gap:1rem">
                 <button id="strstpbtn" type="button" onclick="starter()" class="btn btn-info">
                   <i class="bi bi-play-fill"></i>Start
@@ -217,15 +102,11 @@
                 <button type="button" onclick="toggleAdvancedMenu()" class="btn btn-info">More Option <i
                     class="bi bi-arrow-down-square-fill"></i></button>
               </div>
-
-
                 <div class="metadata d-none" id="readoutUnits">
-
                 <div class="measure"> <span id="maxsp">0</span>
                   <p class="metric">kmph</p>
                   <p class="metricunit">Max</p>
                 </div>
-
                 <div class="measure"> <span id="avrg">0</span>
                   <p class="metric">kmph </p>
                   <p class="metricunit">Average</p>
@@ -243,11 +124,12 @@
           </div>
           <p class="text-center text-danger" id="error"></p>
         </div>
-
       </div>
     </div>
-
-    <article class="about">Instantly track the real-time speed of the Vande Bharat Express using FindSpeedOf's online GPS speedometer. Measure current speed, average speed, maximum speed, and distance directly in your browser on mobile or desktop.</article>
+    <article class="about">
+Instantly track the real-time speed of the Vande Bharat Express using FindSpeedOf's advanced online GPS speedometer. This tool allows you to measure your current speed, average speed, maximum speed, and total distance covered directly in your browser without installing any app. Whether you are traveling on the Vande Bharat Express or any other train, this tool provides a simple and accurate way to monitor speed using your device’s GPS.
+The speedometer works by accessing your device's location in real time and calculating speed based on movement. It is designed to work smoothly on both mobile devices and desktop browsers, making it highly convenient for passengers who want quick and reliable speed data during their journey. With just one click, you can start tracking your speed instantly.
+</article>
     <!-- Features Section -->
 
     <section id="features" class="mt-5">
@@ -290,6 +172,9 @@
         </div>
       </article>
     </section>
+    <article class="about"> This online speedometer is especially useful for train enthusiasts, daily commuters, and curious passengers who want to know how fast the Vande Bharat Express is running at any given moment. It can also be used to compare speeds during different parts of the journey, such as while accelerating, cruising, or slowing down near stations.
+In addition to real-time tracking, the tool helps you understand your travel patterns by showing average and maximum speeds. This makes it not just a speed checker, but a complete travel companion for monitoring performance and movement.
+The FindSpeedOf speedometer is completely free to use and does not require any downloads or registrations. Simply open the page, allow location access, and start tracking your speed instantly. It is a fast, reliable, and user-friendly solution for anyone who wants to measure train speed online with ease.</article>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="mt-5">
