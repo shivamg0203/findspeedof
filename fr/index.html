@@ -86,8 +86,7 @@
   <!-- Main Content -->
   <div class="container mt-4">
     <h1 class="text-center pageheader">Findspeedof</h1>
-    <p class="text-center lead">Suivez votre vitesse et vos données de mouvement en temps réel grâce à Online
-      Speedometer.</p>
+    <p class="text-center lead">Suivez votre vitesse et vos données de déplacement en temps réel grâce à notre compteur de vitesse en ligne.</p>
     <div class="row justify-content-center">
       <div class="col-md-8" style="padding-top: 0rem;">
         <div class="container mt-2" style="padding-top: 1rem;">
@@ -97,7 +96,7 @@
             <div class="mb-3">
               <!-- <option value="unknown" >Select Accuracy Level</option> -->
               <button class="btn btn-light kmph" disabled="" onclick="speedunitfunc('kmph')" type="button">km/h</button>
-              <button class="btn btn-light meters" onclick="speedunitfunc('meters')" type="button">MS</button>
+              <button class="btn btn-light meters" onclick="speedunitfunc('meters')" type="button">Meter/sec</button>
               <button class="btn btn-light mph" onclick="speedunitfunc('mph')" type="button">mph</button>
             </div>
           </div>
@@ -105,12 +104,12 @@
             <form action="" method="get">
               <div style="display: flex;justify-content: space-evenly;gap:1rem">
                 <button class="btn btn-info" id="strstpbtn" onclick="starter()" type="button">
-                  <i class="bi bi-play-fill"></i>Start
+                  <i class="bi bi-play-fill"></i>Démarrer
                 </button>
                 <button class="btn btn-info" onclick="restart()" type="button">
-                  Restart
+                  Réinitialiser
                 </button>
-                <button class="btn btn-info" onclick="toggleAdvancedMenu()" type="button">More<i
+                <button class="btn btn-info" onclick="toggleAdvancedMenu()" type="button">Plus d’options<i
                     class="bi bi-arrow-down-square-fill"></i></button>
               </div>
               <div class="metadata d-none" id="readoutUnits">
@@ -152,7 +151,7 @@
                   <i class="bi bi-speedometer2"></i>
                 </div>
                 <h3 class="h5">Vitesse en temps réel</h3>
-                <p>Vous voulez connaître votre vitesse de déplacement actuelle ? Trouvez-la ici.</p>
+                <p>Vous voulez connaître votre vitesse de déplacement actuelle? Trouvez-la ici.</p>
               </div>
             </div>
           </div>
@@ -228,15 +227,12 @@
           <h3 class="accordion-header" id="headingOne">
             <button aria-controls="collapseOne" aria-expanded="true" class="accordion-button collapsed"
               data-bs-target="#collapseOne" data-bs-toggle="collapse" type="button">
-
              Le compteur de vitesse fonctionne-t-il sans connexion Internet ?
-
             </button>
           </h3>
           <div aria-labelledby="headingOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseOne">
             <div class="accordion-body">
-
               Oui, la vitesse est calculée grâce au GPS de votre appareil. Une connexion Internet est seulement nécessaire pour charger la page, pas pour mesurer la vitesse.</div>
           </div>
         </div>
@@ -244,16 +240,13 @@
           <h3 class="accordion-header" id="headingTwo">
             <button aria-controls="collapseTwo" aria-expanded="false" class="accordion-button collapsed"
               data-bs-target="#collapseTwo" data-bs-toggle="collapse" type="button">
-
               Quelle est la vitesse maximale que cet outil peut mesurer ?
-
             </button>
           </h3>
           <div aria-labelledby="headingTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseTwo">
             <div class="accordion-body">
             Le compteur peut mesurer des vitesses élevées, adaptées aux trains, voitures et vélos. Cependant, la précision dépend de la qualité du signal GPS de votre appareil.
-
             </div>
           </div>
         </div>
@@ -261,17 +254,13 @@
           <h3 class="accordion-header" id="headingThree">
             <button aria-controls="collapseThree" aria-expanded="false" class="accordion-button collapsed"
               data-bs-target="#collapseThree" data-bs-toggle="collapse" type="button">
-
               Puis-je changer l’unité de mesure de la vitesse ?
-
             </button>
           </h3>
           <div aria-labelledby="headingThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"
             id="collapseThree">
             <div class="accordion-body">
-
               Oui, vous pouvez afficher la vitesse en kilomètres par heure (km/h), miles par heure (mph) ou mètres par seconde (m/s) selon vos préférences.
-
             </div>
           </div>
         </div>
