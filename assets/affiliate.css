@@ -1,0 +1,60 @@
+#affiliate-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin:20px auto;
+    max-width:900px;
+}
+
+.affiliate-card{
+    display:flex;
+    gap:15px;
+    align-items:center;
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:14px;
+    padding:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.affiliate-card img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.affiliate-info{
+    flex:1;
+}
+
+.affiliate-info h3{
+    margin:0 0 6px;
+    font-size:17px;
+}
+
+.affiliate-info p{
+    margin:0 0 12px;
+    font-size:14px;
+    color:#666;
+}
+
+.affiliate-info a{
+    display:inline-block;
+    background:#ff9900;
+    color:#111;
+    padding:9px 16px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+#affiliate-container{
+    grid-template-columns:1fr;
+}
+
+}

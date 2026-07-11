@@ -1,0 +1,102 @@
+.affiliate-card {
+    align-items: center;
+    gap: 15px;
+    margin: 18px auto;
+    max-width: 650px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+    padding: 15px;
+    animation: slideDown .45s ease;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.affiliate-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.affiliate-info {
+    flex: 1;
+}
+
+.affiliate-tag {
+    display: inline-block;
+    background: #fff5d8;
+    color: #9a6800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.affiliate-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.affiliate-info p {
+    margin: 8px 0 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.affiliate-info a {
+    display: inline-block;
+    background: #ff9900;
+    color: #111;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.affiliate-info a:hover {
+    background: #f3b12b;
+}
+
+.affiliate-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #777;
+}
+
+@media(max-width:650px) {
+
+    .affiliate-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px;
+    }
+
+    .affiliate-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .affiliate-info a {
+        width: 100%;
+    }
+
+}
