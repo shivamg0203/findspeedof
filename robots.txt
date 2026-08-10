@@ -6,4 +6,4 @@ Disallow: /assets/plan.txt
 Disallow: /README.md
 
 # Sitemap location
-Sitemap: https://www.findspeedof.com/sitemap.xml
+Sitemap: https://findspeedof.com/sitemap.xml
