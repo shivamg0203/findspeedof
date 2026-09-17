@@ -21,7 +21,7 @@ const affiliateHTML = `
         <small>⭐ Cheap and Reliable</small>
         <h3>Lista 14 Waterproof Bicycle Odometer (6 Months warrenty)</h3>
         <p>Waterproof design for all weather conditions.</p>
-        <a href="https://link.amazon/B0do5Lole"
+        <a href="https://amzn.in/d/0bCp19ah"
            target="_blank"
            rel="nofollow sponsored noopener">
            Check Price
