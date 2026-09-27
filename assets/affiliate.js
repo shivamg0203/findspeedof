@@ -30,7 +30,7 @@ const affiliateHTML = `
 </div>
 
 <div class="affiliate-card">
-    <img src="/assets/images/cpplus-64gb-microsd.jpg"
+    <img src="/assets/images/cp-plus-img.webp"
          alt="CP PLUS 64GB microSDXC Memory Card"
          class="affiliate-image">
         <div class="affiliate-info">
