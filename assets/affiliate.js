@@ -29,6 +29,21 @@ const affiliateHTML = `
     </div>
 </div>
 
+<div class="affiliate-card">
+    <img src="/assets/images/cpplus-64gb-microsd.jpg"
+         alt="CP PLUS 64GB microSDXC Memory Card"
+         class="affiliate-image">
+        <div class="affiliate-info">
+        <small>⭐ Recommended</small>
+        <h3>CP PLUS 64GB microSDXC Memory Card</h3>
+        <p>UHS-3 Class 10 card with up to 70 Mbps read & 30 Mbps write speeds.</p>
+        <a href="https://link.amazon/B0jhKULWl"
+           target="_blank"
+           rel="nofollow sponsored noopener">
+            Check Price
+        </a>
+    </div>
+</div>
 `;
 
 document.getElementById("affiliate-container").innerHTML = affiliateHTML;
