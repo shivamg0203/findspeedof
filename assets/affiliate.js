@@ -44,6 +44,25 @@ const affiliateHTML = `
         </a>
     </div>
 </div>
+<div class="affiliate-card">
+    <img src="/assets/images/zebronics-thunder.webp"
+         alt="Zebronics Thunder Wireless Headphones"
+         class="affiliate-image">
+
+    <div class="affiliate-info">
+        <small>⭐ Recommended</small>
+
+        <h3>Zebronics Thunder Wireless Headphones</h3>
+
+        <p>60 hrs playback, 40mm drivers, ENC, gaming mode & Bluetooth 6.0.</p>
+
+        <a href="https://link.amazon/B0gzQdEXG"
+           target="_blank"
+           rel="nofollow sponsored noopener">
+            Check Price
+        </a>
+    </div>
+</div>
 `;
 
 document.getElementById("affiliate-container").innerHTML = affiliateHTML;
