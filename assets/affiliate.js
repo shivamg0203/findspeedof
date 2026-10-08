@@ -1,12 +1,10 @@
 const affiliateHTML = `
-<div class="affiliate-card">
-    <img src="/assets/images/speedometerprem.jpg" alt="GPS Speedometer Premium" class="affiliate-image">
-
+<div class="affiliate-card" onclick="this.querySelector('a').click()">
+    <img src="/assets/images/speedometerprem.webp" alt="GPS Speedometer Premium" class="affiliate-image">
     <div class="affiliate-info">
         <small>⭐ Recommended</small>
         <h3>XPR3SS GPS Bicycle Speedometer</h3>
         <p>Accurate speed & distance tracking.</p>
-
         <a href="https://link.amazon/B0gzQdEXG"
            target="_blank"
            rel="nofollow sponsored noopener">
@@ -14,9 +12,8 @@ const affiliateHTML = `
         </a>
     </div>
 </div>
-<div class="affiliate-card">
+<div class="affiliate-card" onclick="this.querySelector('a').click()">
     <img src="/assets/images/waterproof_odometer.webp" alt="GPS Speedometer Cheaper" class="affiliate-image">
-
     <div class="affiliate-info">
         <small>⭐ Cheap and Reliable</small>
         <h3>Lista 14 Waterproof Bicycle Odometer (6 Months warrenty)</h3>
@@ -28,8 +25,7 @@ const affiliateHTML = `
         </a>
     </div>
 </div>
-
-<div class="affiliate-card">
+<div class="affiliate-card" onclick="this.querySelector('a').click()">
     <img src="/assets/images/cp-plus-img.webp"
          alt="CP PLUS 64GB microSDXC Memory Card"
          class="affiliate-image">
@@ -44,19 +40,15 @@ const affiliateHTML = `
         </a>
     </div>
 </div>
-<div class="affiliate-card">
+<div class="affiliate-card" onclick="this.querySelector('a').click()">
     <img src="/assets/images/zebronics-thunder.webp"
          alt="Zebronics Thunder Wireless Headphones"
          class="affiliate-image">
-
     <div class="affiliate-info">
         <small>⭐ Recommended</small>
-
         <h3>Zebronics Thunder Wireless Headphones</h3>
-
         <p>60 hrs playback, 40mm drivers, ENC, gaming mode & Bluetooth 6.0.</p>
-
-        <a href="https://link.amazon/B0gzQdEXG"
+        <a href="https://link.amazon/B01aHn1uO"
            target="_blank"
            rel="nofollow sponsored noopener">
             Check Price
