@@ -41,14 +41,14 @@ const affiliateHTML = `
     </div>
 </div>
 <div class="affiliate-card" onclick="this.querySelector('a').click()">
-    <img src="/assets/images/zebronics-thunder.webp"
-         alt="Zebronics Thunder Wireless Headphones"
+    <img src="/assets/images/fastrack-revoltt-s1.webp"
+         alt="Fastrack Revoltt S1 Smart Watch"
          class="affiliate-image">
-    <div class="affiliate-info">
+       <div class="affiliate-info">
         <small>⭐ Recommended</small>
-        <h3>Zebronics Thunder Wireless Headphones</h3>
-        <p>60 hrs playback, 40mm drivers, ENC, gaming mode & Bluetooth 6.0.</p>
-        <a href="https://link.amazon/B01aHn1uO"
+        <h3>Fastrack Revoltt S1 Smart Watch</h3>
+        <p>1.83” TFT 2.5D display, Bluetooth calling, heart rate, SpO2 & sleep tracking, IP68 & up to 5 days battery.</p>
+        <a href="https://link.amazon/B07ZdeBbz"
            target="_blank"
            rel="nofollow sponsored noopener">
             Check Price
