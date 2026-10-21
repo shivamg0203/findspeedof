@@ -1,102 +1,218 @@
+
+/* Affiliate section */
+.affiliate-section {
+    width: 100%;
+    margin: 32px auto;
+}
+
+.affiliate-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.affiliate-disclosure {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+
+/* Product grid */
+.affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+
+.affiliate-grid.affiliate-fade-out {
+    opacity: 0;
+}
+
+/* Individual product card */
 .affiliate-card {
-    align-items: center;
-    gap: 15px;
-    margin: 18px auto;
-    max-width: 650px;
-    background: #fff;
-    border-radius: 14px;
-    border: 1px solid #e6e6e6;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
-    padding: 15px;
-    animation: slideDown .45s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    margin: 0;
+    padding: 14px;
     position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    animation: slideDown 0.45s ease;
+}
+
+.affiliate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes slideDown {
     from {
         opacity: 0;
-        transform: translateY(-15px);
+        transform: translateY(-10px);
     }
-
     to {
         opacity: 1;
-        transform: none;
+        transform: translateY(0);
     }
 }
 
-.affiliate-card img {
-    width: 90px;
-    height: 90px;
+/* Product image */
+.affiliate-card .affiliate-image {
+    display: block;
+    width: 100%;
+    height: 160px;
+    padding: 8px;
     object-fit: contain;
     flex-shrink: 0;
+    background: #fff;
 }
 
+/* Product information */
 .affiliate-info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     flex: 1;
+    min-width: 0;
+    padding: 10px 2px 2px;
 }
 
+.affiliate-badge,
 .affiliate-tag {
     display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 8px;
+    padding: 4px 9px;
+    border-radius: 20px;
     background: #fff5d8;
     color: #9a6800;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.4;
     font-weight: 600;
-    margin-bottom: 8px;
 }
 
 .affiliate-info h3 {
-    margin: 0;
-    font-size: 18px;
+    margin: 0 0 8px;
+    font-size: 1rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
 .affiliate-info p {
-    margin: 8px 0 15px;
+    margin: 0 0 16px;
     color: #666;
-    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.5;
 }
 
-.affiliate-info a {
-    display: inline-block;
+/* Amazon-style button */
+.affiliate-info a,
+.affiliate-link {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
     background: #ff9900;
     color: #111;
-    padding: 10px 18px;
-    border-radius: 8px;
+    text-align: center;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
-.affiliate-info a:hover {
+.affiliate-info a:hover,
+.affiliate-link:hover {
     background: #f3b12b;
+    color: #111;
 }
 
+/* Optional close button, if your HTML uses one */
 .affiliate-close {
     position: absolute;
+    top: 6px;
     right: 8px;
-    top: 8px;
+    z-index: 2;
     border: none;
-    background: none;
+    background: transparent;
+    color: #777;
     font-size: 22px;
     cursor: pointer;
-    color: #777;
 }
 
-@media(max-width:650px) {
+/* Tablet and mobile */
+@media (max-width: 900px) {
+    .affiliate-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .affiliate-card .affiliate-image {
+        height: 145px;
+    }
+}
+
+@media (max-width: 480px) {
+    .affiliate-section {
+        margin: 24px auto;
+    }
+
+    .affiliate-grid {
+        gap: 10px;
+    }
 
     .affiliate-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 18px;
+        padding: 10px;
+        border-radius: 11px;
     }
 
-    .affiliate-card img {
-        width: 80px;
-        height: 80px;
+    .affiliate-card .affiliate-image {
+        height: 115px;
+        padding: 4px;
     }
 
-    .affiliate-info a {
-        width: 100%;
+    .affiliate-info {
+        padding-top: 8px;
     }
 
+    .affiliate-badge,
+    .affiliate-tag {
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+
+    .affiliate-info h3 {
+        font-size: 0.9rem;
+    }
+
+    .affiliate-info p {
+        font-size: 0.8rem;
+        line-height: 1.45;
+    }
+
+    .affiliate-info a,
+    .affiliate-link {
+        padding: 9px 6px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .affiliate-card,
+    .affiliate-grid {
+        animation: none;
+        transition: none;
+    }
 }

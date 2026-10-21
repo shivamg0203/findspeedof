@@ -1,4 +1,3 @@
-```js
 // ============================================================
 // AFFILIATE PRODUCT ROTATOR
 // ============================================================
@@ -87,44 +86,13 @@ const affiliateProducts = [
     // PRODUCT 6 - EXAMPLE
     // --------------------------------------------------------
     {
-        image: "/assets/images/product6.webp",
-        alt: "Gym Duffel Bag",
-        badge: "⭐ Popular",
-        title: "Premium Gym Duffel Bag",
-        description: "Spacious and convenient bag for your daily gym essentials.",
-        link: "YOUR_AFFILIATE_LINK"
-    },
-
-
-    // --------------------------------------------------------
-    // PRODUCT 7 - EXAMPLE
-    // --------------------------------------------------------
-    {
-        image: "/assets/images/product7.webp",
-        alt: "Smart Fitness Watch",
-        badge: "⭐ Trending",
-        title: "Smart Fitness Watch",
-        description: "Track workouts, activity and everyday fitness.",
-        link: "YOUR_AFFILIATE_LINK"
-    },
-
-
-    // --------------------------------------------------------
-    // PRODUCT 8 - EXAMPLE
-    // --------------------------------------------------------
-    {
-        image: "/assets/images/product8.webp",
-        alt: "Adjustable Dumbbells",
-        badge: "⭐ Gym Essential",
-        title: "Adjustable Dumbbell Set",
-        description: "Space-saving strength training equipment for home workouts.",
-        link: "YOUR_AFFILIATE_LINK"
-    }
-
-    // --------------------------------------------------------
-    // ADD MORE PRODUCTS BELOW
-    // --------------------------------------------------------
-
+        image: "/assets/images/t800-smart-watch.webp",
+        alt: "T800 Smart Watch for Men and Women with 1.99-inch display",
+        badge: "⭐ Budget Smartwatch",
+        title: "T800 Smart Watch for Men & Women",
+        description: "1.99-inch display, Bluetooth calling, heart rate monitoring, IP67 water resistance and smart notifications.",
+        link: "https://link.amazon/B03OB1Xd6"
+        },
 ];
 
 
@@ -165,7 +133,6 @@ function getNextProducts() {
     // If there aren't enough products left,
     // create a fresh shuffled pool.
     if (productPool.length < PRODUCTS_PER_VIEW) {
-
         productPool = shuffleProducts(affiliateProducts);
     }
 
@@ -228,37 +195,26 @@ function showAffiliateProducts() {
 
     const container =
         document.getElementById("affiliate-container");
-
     if (!container) return;
-
     const products = getNextProducts();
-
     // Fade out
     container.classList.add("affiliate-fade-out");
-
     setTimeout(() => {
-
         container.innerHTML =
             products.map(createProductHTML).join("");
-
         // Fade in
         container.classList.remove("affiliate-fade-out");
-
     }, 300);
 }
-
 
 // ============================================================
 // INITIAL DISPLAY
 // ============================================================
-
 showAffiliateProducts();
-
 
 // ============================================================
 // AUTOMATIC ROTATION
 // ============================================================
-
 setInterval(
     showAffiliateProducts,
     ROTATION_INTERVAL
@@ -269,50 +225,6 @@ setInterval(
 
 Put this in your existing CSS:
 
-```css id="p6q2nr"
-#affiliate-container {
-    transition: opacity 0.3s ease;
-}
-
-#affiliate-container.affiliate-fade-out {
-    opacity: 0;
-}
-
-.affiliate-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.affiliate-card:hover {
-    transform: translateY(-3px);
-}
-
-.affiliate-card a {
-    position: relative;
-    z-index: 2;
-}
-```
-
-### Your HTML stays exactly the same
-
-```html
-<div id="affiliate-container"></div>
-```
-
-{/* ### Adding products
-
-You only need to add another object: */}
-
-```js
-{
-    image: "/assets/images/my-product.webp",
-    alt: "My Product",
-    badge: "⭐ Recommended",
-    title: "My Product Name",
-    description: "Short description of the product.",
-    link: "https://link.amazon/XXXXXXXX"
-},
-```
-
 {/* You can have **10, 30, 50 or even 100 products** in the array.
-One important improvement over the earlier version: this uses a proper **Fisher-Yates shuffle** instead of `.sort(() => Math.random() - 0.5)`, so the rotation is more reliably randomized. */}
+One important improvement over the earlier version: this uses a proper **Fisher-Yates shuffle** instead of `
+.sort(() => Math.random() - 0.5)`, so the rotation is more reliably randomized. */}
