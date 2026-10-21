@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const PRODUCTS_PER_VIEW = 4;
-  const ROTATION_INTERVAL = 10000; // 15 seconds
+  const ROTATION_INTERVAL = 15000; // 15 seconds
   const FADE_DURATION = 300; // milliseconds
 
   const affiliateProducts = [
